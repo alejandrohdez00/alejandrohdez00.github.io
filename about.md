@@ -4,9 +4,7 @@ permalink: "/about/"
 layout: page
 ---
 
-## About
-
-Hello! I'm Alejandro Hernandez and I love to explore how AI helps us understand the outer universe as well as the inner one: the human brain.
+Hello! I'm **Alejandro Hernandez** and I love to explore how AI helps us understand the outer universe as well as the inner one: the human brain.
 
 I'm mainly attracted to the intersection of **AI and creativity**, the bidirectional exploration of how AI can help us understand the human creative process and how studying the brain can, in turn, enhance AI's creative abilities. I believe the best way to truly understand something is by building it yourself, and maybe the same holds true for both creativity and the human brain!
 
