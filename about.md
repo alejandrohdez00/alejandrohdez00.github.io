@@ -3,9 +3,7 @@ title: "About"
 permalink: "/about/"
 layout: page
 ---
-<div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-  <img src="/assets/images/about.jpg" alt="Me" style="max-width: 100%; height: auto;">
-</div>
+
 
 Hello! I'm **Alejandro Hernandez** and I love to explore how AI helps us understand the outer universe as well as the inner one: the human brain.
 
@@ -18,3 +16,8 @@ In my family, there were no scientists, but rather it was filled with artists! H
 I enjoy almost all forms of art but I love reading, watching films, going to the theater and the opera. When I have the time, I also enjoy writing about the **philosophical questions AI raises**. In particular, I try to connect ideas from AI or Computer Science with the books I’m reading. As you can probably tell, building conceptual bridges is what I enjoy most ;).
 
 **Currently, I am applying to PhD programs to continue exploring this intersection of AI and processes and dynamics of creativity!**
+
+
+<div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+  <img src="/assets/images/about.jpg" alt="Me" style="max-width: 100%; height: auto;">
+</div>
