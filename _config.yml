@@ -1,6 +1,6 @@
 title: "alesblog"
 author: "Alejandro Hernandez Artiles"
-description: "Made with <b style=\"color: #f45;\">&lt;3</b>"
+description: "Alejandro Hernandez Artiles"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
@@ -25,7 +25,7 @@ external:                  # shows a footer with social links - for available ic
   - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/alejandro-hernandez-artiles/"}
 
 comments:
-#  disqus_shortname: ""    # see https://disqus.com/
+   disqus_shortname: ""    # see https://disqus.com/
 #  isso_domain: ""         # see https://posativ.org/isso/
 
 remote_theme: niklasbuschmann/contrast@v2.11
