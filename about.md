@@ -15,9 +15,6 @@ I have worked as a Research Assistant at **CSIC**, Spain's leading research orga
 
 Outside of my technical work, I'm passionate about creative writing, literature, cinema, video games and opera. I love exploring topics that interest me, usually broad philosophical questions, through writing. I enjoy examining these ideas both through research-based essays and by embedding them as underlying themes into fictional stories. In particular, I try to connect ideas from AI or Computer Science with the books I’m reading. As you can probably tell, building conceptual bridges is what I enjoy most ;)
 
-**Currently, I am applying to PhD programs to continue exploring this intersection of AI and processes and dynamics of creativity!**
-
-
 <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
   <img src="/assets/images/about.jpg" alt="Me" style="max-width: 100%; height: auto;">
 </div>
