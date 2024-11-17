@@ -56,7 +56,7 @@ Let me give you an example: the concept of an "airplane" simply didn't exist dur
 Although trained across temporal and cultural boundaries, generative AI models inevitably absorb human biases. As a result, these models can
 expect to predominantly produce cultural artifacts that align with human cognitive availability. James Evans and his team showed that counteracting such a bias could be key to algorithmic augmented scientific discovery [5, 6].
 
-We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - P(a|S), which captures the probability of finding concept A in an artwork that contains a set of concepts S. The second is the Artist-level distribution - Q(a|S), representing the probability of an artist using concept A given they've used concepts S in their whole artistic work.
+We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - $P(a|S)$, which captures the probability of finding concept A in an artwork that contains a set of concepts S. The second is the Artist-level distribution - $Q(a|S)$, representing the probability of an artist using concept A given they've used concepts S in their whole artistic work.
 
 The key difference between these distributions is their scope. If an artist has used concept A in one artwork and concept B in another, both concepts are within their cognitive reach, even if they've never combined them in a single piece. Our method looks for what we playfully call "alien" combinations (inspired by James Evans' work on alien scientific discoveries) by finding combinations that are surprisingly improbable in the artist-level distribution using a ranking system.
 
@@ -66,16 +66,24 @@ Of course, we're making some assumptions here - like limiting our concept world 
 
 If you're interested, you can read the paper here. However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked.
 
+<!add images!
 
 
 
 
 ## References
 [1] Pelaprat, E., & Cole, M. (2011). “minding the gap”: Imagination, creativity and human cognition. Integrative Psychological and Behavioral Science, 45(4), 397–418.
+
 [2] Hassabis, D., & Maguire, E. A. (2009). The construction system of the brain. Philosophical Transactions of the Royal Society B: Biological Sciences, 364(1521), 1263–1271.
+
 [3] Csikszentmihalyi, M. (1997). Flow and the psychology of discovery and invention. HarperPerennial, New York, 39, 1–16.
+
 [4] Thagard, P., & Stewart, T. C. (2011). The aha! experience: Creativity through emergent binding in neural networks. Cognitive science, 35(1), 1–33.
+
 [5] Gero, J. S. (1996). Creativity, emergence and evolution in design. Knowledge-Based Systems, 9(7), 435–448.
+
 [6] Boden, M. A. (1998). Creativity and artificial intelligence. Artificial intelligence, 103(1-2), 347–356.
+
 [7] Boden, M. A. (2004). The creative mind: Myths and mechanisms. Routledge.
+
 [8] Franceschelli, G., & Musolesi, M. (2023). On the creativity of large language models. arXiv preprint arXiv:2304.00008.
