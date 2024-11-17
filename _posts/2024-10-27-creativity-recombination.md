@@ -10,7 +10,7 @@ Those were the words that my uncle, the artist Pipo Hernandez, told me in a burg
 
 (You can check his work [here](https://nfgaleria.com/artista/pipo-hernandez-rivero/) if you like. I personally love it!)
 
-Some months later I delivered my Master's thesis called "Alien Recombination: Exploring Concept Blends Beyond Human Cognitive Availability" at the Technical University of Munich. I carried out this research along a fantastic team of researchers from the Center of Human and Machines at the Max Planck Institute for Human Development and the Max Planck Institute for Intelligent Systems.
+Some months later I delivered my Master's thesis called "Alien Recombination: Exploring Concept Blends Beyond Human Cognitive Availability" at the Technical University of Munich. I had the privilege of carrying out this research along a fantastic team of researchers from the Max Planck Institute for Human Development and the Max Planck Institute for Intelligent Systems.
 
 In this project we thought about ways to make machines more creative. This is a very ambitious goal to be honest, a master's thesis is not enough to tackle this problem in full depth, mostly because we do not know exactly where the problem ends.
 
@@ -56,7 +56,7 @@ Let me give you an example: the concept of an "airplane" simply didn't exist dur
 Although trained across temporal and cultural boundaries, generative AI models inevitably absorb human biases. As a result, these models can
 expect to predominantly produce cultural artifacts that align with human cognitive availability. James Evans and his team showed that counteracting such a bias could be key to algorithmic augmented scientific discovery [5, 6].
 
-We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - $P(a|S)$, which captures the probability of finding concept A in an artwork that contains a set of concepts S. The second is the Artist-level distribution - $Q(a|S)$, representing the probability of an artist using concept A given they've used concepts S in their whole artistic work.
+We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - $$P(a|S)$$, which captures the probability of finding concept A in an artwork that contains a set of concepts S. The second is the Artist-level distribution - $$Q(a|S)$$, representing the probability of an artist using concept A given they've used concepts S in their whole artistic work.
 
 The key difference between these distributions is their scope. If an artist has used concept A in one artwork and concept B in another, both concepts are within their cognitive reach, even if they've never combined them in a single piece. Our method looks for what we playfully call "alien" combinations (inspired by James Evans' work on alien scientific discoveries) by finding combinations that are surprisingly improbable in the artist-level distribution using a ranking system.
 
