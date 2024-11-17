@@ -6,15 +6,14 @@ date: 2024-10-27
 "Art is a mechanism that is always trying to destroy itself, always questioning what is or not is art"
 
 
-Those were the words that my uncle, the artist Pipo Hernandez, told me in a burger in Madrid when we were discussing if an AI could be an artist.
+Those were the words my uncle, the artist Pipo Hernandez, shared with me over burgers in Madrid while we discussed whether AI could truly be an artist. (If you're curious about his work, you can check it out [here](https://nfgaleria.com/artista/pipo-hernandez-rivero/) - I absolutely love it!)
 
-(You can check his work [here](https://nfgaleria.com/artista/pipo-hernandez-rivero/) if you like. I personally love it!)
+A few months later, I found myself defending my Master's thesis, "Alien Recombination: Exploring Concept Blends Beyond Human Cognitive Availability" at the Technical University of Munich. I had the privilege to conduct this research alongside a brilliant team from both the Max Planck Institute for Human Development and the Max Planck Institute for Intelligent Systems.
 
-Some months later I delivered my Master's thesis called "Alien Recombination: Exploring Concept Blends Beyond Human Cognitive Availability" at the Technical University of Munich. I had the privilege of carrying out this research along a fantastic team of researchers from the Max Planck Institute for Human Development and the Max Planck Institute for Intelligent Systems.
+Our project explored ways to improve artificial creativity, an admittedly ambitious goal for a master's thesis. To be honest, we couldn't hope to fully address such a complex challenge, especially since we're still discovering new dimensions of the problem itself.
 
-In this project we thought about ways to make machines more creative. This is a very ambitious goal to be honest, a master's thesis is not enough to tackle this problem in full depth, mostly because we do not know exactly where the problem ends.
+In this post, I want to share my thoughts about the nature of creativity and the challenges of implementing it in machines, along with potential paths forward. This isn't meant to be a scientific article, think of it more as an invitation to dialogue, a way to organize my thoughts and hopefully inspire others to become as passionate about this topic as I am.
 
-In this post, I will write about the nature of creativity and the problems of implementing it in a machine, as well as ways we could improve it. Note that this is not a scientific article, nor does it pretend to be. It is an exercise to verbalize my thoughts and to foster dialogue and new ideas about this topic I find so fascinating.
 
 To-do:
 - Boden creativity
@@ -25,17 +24,16 @@ To-do:
 
 ## What is creativity?
 
-Creativity is a difficult concept to grasp. Some view it as a process that emerges from imagination [1], where imagination is seen as a reconstructive process based on prior knowledge [2]. Others define it as the process by which an individual generates new ideas or patterns using the symbols of a given domain [3]. Additionally, some interpretations view creativity as a fully combinatorial process, involving the combination of existing representations [4][5]. 
+Creativity is one of those concepts that seems to slip through our fingers just when we think we've grasped it. Some view it as a process that emerges from imagination [1], where imagination is seen as a reconstructive process based on prior knowledge [2]. Others define it as the process by which an individual generates new ideas or patterns using the symbols of a given domain [3]. Additionally, some interpretations view creativity as a fully combinatorial process, involving the combination of existing representations [4][5]. 
 
-In computer science, one of the most influential definitions of creativity comes from Margaret Boden [6], who describes it as "the ability to come up with ideas or artifacts that are new, surprising, and valuable." [7] This definition is particularly useful because it breaks creativity into somewhat measurable components: valuable, meaning the output is of high quality and socially accepted; novel, meaning the artifact is significantly different from others in its class; and surprising, meaning the result deviates from expectations.
+In computer science, Margaret Boden's definition has been particularly influential [6]. She describes creativity as "the ability to come up with ideas or artifacts that are new, surprising, and valuable" [7]. What makes this definition so useful is how it breaks creativity into "measurable" components: value (high quality and social acceptance), novelty (significant difference from existing artifacts), and surprise (deviation from expectations).
 
-Boden identifies three types of creativity:
+Boden identifies three distinct types of creativity:
+Combinatorial creativity involves creating unexpected combinations of familiar ideas, like pairing chocolate with chili in a recipe.
 
-• Combinatorial creativity: This involves making unfamiliar combinations of familiar ideas. An example of this is creating a new recipe by pairing unexpected ingredients, such as chocolate and chili.
+Exploratory creativity is about finding new solutions within established frameworks, like a jazz musician discovering fresh melodies while working within traditional chord progressions.
 
-• Exploratory creativity: This focuses on finding new solutions within an existing style or set of rules, like a jazz musician improvising a melody while adhering to standard chord progressions.
-
-• Transformational creativity: This involves completely changing the current way of thinking. A classic example is Einstein's theory of relativity, which revolutionized our understanding of space and time, or Picasso's cubist paintings, which redefined artistic expression and deeply transformed 20th-century art.
+Transformational creativity involves fundamentally changing how we think about something. Think of Einstein's theory of relativity revolutionizing our understanding of space and time, or how Picasso's cubist paintings transformed 20th-century artistic expression.
 
 -add vanesh theory of creativity
 
