@@ -20,7 +20,7 @@ mathjax: true
 "Art is a mechanism that is always trying to destroy itself, always questioning what is or not is art"
 
 
-Those were the words my uncle, the artist Pipo Hernandez, shared with me over burgers in Madrid while we discussed whether AI could truly be an artist. (If you're curious about his work, you can check it out [here](https://nfgaleria.com/artista/pipo-hernandez-rivero/) - I absolutely love it!)
+Those were the words my uncle, the artist Pipo Hernandez, shared with me over dinner at his house while we discussed whether AI could truly be an artist. (If you're curious about his work, you can check it out [here](https://nfgaleria.com/artista/pipo-hernandez-rivero/) - I absolutely love it!)
 
 A few months later, I found myself defending my Master's thesis, "Alien Recombination: Exploring Concept Blends Beyond Human Cognitive Availability" at the Technical University of Munich. I had the privilege to conduct this research alongside a brilliant team from both the Max Planck Institute for Human Development and the Max Planck Institute for Intelligent Systems.
 
@@ -51,7 +51,7 @@ Transformational creativity involves fundamentally changing how we think about s
 
 -add vanesh theory of creativity
 
-## Unexplored combinations
+## Combinatorial creativity is still fire
 
 Combinatorial creativity is often considered the most basic form of creativity. While some studies suggest that LLMs are primarily limited to this type of creativity, lacking the deeper exploratory or transformative capabilities found in other forms [8], we shouldn't undervalue the power of combining different concepts.
 
@@ -68,7 +68,7 @@ Let me give you an example: the concept of an "airplane" simply didn't exist dur
 Although trained across temporal and cultural boundaries, generative AI models inevitably absorb human biases. As a result, these models can
 expect to predominantly produce cultural artifacts that align with human cognitive availability. James Evans and his team showed that counteracting such a bias could be key to algorithmic augmented scientific discovery [5, 6].
 
-We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - $P(a|S)$, which captures the probability of finding concept A in an artwork that contains a set of concepts S. The second is the Artist-level distribution - \(Q(a|S)\), representing the probability of an artist using concept A given they've used concepts S in their whole artistic work.
+We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - \\(P(a|S)\\), which captures the probability of finding concept A in an artwork that contains a set of concepts S. The second is the Artist-level distribution - \\(Q(a|S)\\), representing the probability of an artist using concept A given they've used concepts S in their whole artistic work.
 
 The key difference between these distributions is their scope. If an artist has used concept A in one artwork and concept B in another, both concepts are within their cognitive reach, even if they've never combined them in a single piece. Our method looks for what we playfully call "alien" combinations (inspired by James Evans' work on alien scientific discoveries) by finding combinations that are surprisingly improbable in the artist-level distribution using a ranking system.
 
@@ -76,9 +76,68 @@ This leads us to discover combinations that are hard to find or conceive natural
 
 Of course, we're making some assumptions here - like limiting our concept world to those used in WikiArt artworks, and assuming artists express all their conceptual knowledge in their work (which might not be realistic, an artist might know about something but choose never to paint it). But it gives us a interesting approximation of cognitive availability and lets us explore these low density or empty spaces of artistic combinations that have never been attempted and hard to even conceive of in our world (dataset).
 
-If you're interested, you can read the paper here. However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked.
+If you're interested, you can read the paper here. However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked. Our paper is merely a small step, a toy idea, compared to the progress that still lies ahead.
 
 <!add images!
+
+## The dynamics of Creativity
+
+Now, let's dive into the tricky part: how creativity actually works in practice, how we create things that are both novel and high-quality.
+
+When I was young and creating my own stories and worlds, I intuitively understood creativity as transformations in a high-dimensional space. I am not any genious, of course I didn't know what a was a high-dimensional space then, but I intuitively knew I was taking my existing knowledge and transforming it until it satisfied what I now understand as my internal aesthetic fitness function.
+
+Take character creation, for instance. When developing a protagonist or villain, I'd start with someone I knew, real or fictional, and begin transforming and mutating their traits, their personality dimensions. I might want to make a character more villainous while keeping them humble, creating an intriguing contradiction that makes them more interesting. At around age 10-12, I was constantly observing people around me, collecting interesting personality traits and behaviors that could work well on my characters.
+
+I'd notice things like how someone smiles when embarrassed, or how another person accumulates anger silently before releasing it explosively in a stressful moment. By taking a bunch of these observations and modifying them, say, multiplying that suppressed anger dimension by 1000 (Yes, I know the multiplications here might seem unusual, but is a good way to visualize it), you can create a fascinating villain: someone who could be noble and humble but carries deep resentment that eventually erupts like a nuclear bomb, devastating everything around them. There are already famous characters that reflect this idea, though with more layers of complexity, like the Joker (the movie), Jinx from Arcane, and Eren from Shingeki no Kyojin.
+
+This process isn't limited to character development, it applies equally to world-building and plot structure. You're constantly mutating and transforming the artifact in your mind until it achieves that sweet spot desired of novelty, surprise, and value.
+
+This perspective led to an interesting conversation with my uncle about making an AI artist. I suggested that understanding creativity in computational terms, or at least having a detailed explanation of its mechanisms, could help to achieve this, if possible. Then, I asked him to recall how he came up with the idea for his latest artwork, which was exhibited at ARCO, Spain's International Contemporary Art Fair.
+
+Explaining this artistic piece goes against its essence, but trust me, we could discuss its intricacies for hours. Still, I’ll try to focus on the main point. As you can see in Figure X, the piece consists of a wall displaying Romanticism paintings with black weighing scales on the floor. The mere presence of Romantic paintings in a Contemporary Art fair is already surprising, but the piece explores current dialogue mechanism between artwork and spectator.
+
+In our current era, when confronted with art we don't immediately understand, we often demand quick explanations. We've lost our patience for mystery, for engaging in slow but intense dialogue with an artwork, for dealing with ambiguity. Conditioned by fast internet and instant information, we expect immediate answers from art. However, art often transmits questions rather than answers, usually philosophical questions without clear solutions.
+
+The piece juxtaposes two elements: Romantic paintings, which invite philosophical dialogue and embrace mystery (a highlight of Romanticism), and weighing scales, which represent our modern preference for functional questions with immediate, concrete answers. Functional questions are asked to obtain factual information. When you step on a weighing scale, you are essentially asking, "What is my weight?" and you quickly receive an answer. At the fair, observers would quickly tire of contemplating the paintings and start playing with the scales instead. The whole scene captures our discomfort with ambiguity, our intolerance to questions that might not have definitive answers, our fear to the abyss. It shows how quickly we retreat to the safety of measurable, quantifiable responses in a world we struggle to understand, avoiding questions that lack factual, immutable answers.
+
+Art is not meant to deliver easy truths; it is a dialogue, a philosophical conversation that often raises more questions than it answers. Moreover, this dialogue shifts over time, even if the artwork remains unchanged, because it is influenced by the current cultural context. Borges' story *"Pierre Menard, Author of the Quixote"* is a brilliant exploration of this idea. It's a must-read if you haven’t encountered it yet! But now, let's return to the creative process.
+
+As I mentioned, when I asked my uncle about the origins of his artwork, he told me that it started with a problem: "There is no true 21st-century art - everything we're seeing is just an extension of 20th-century movements. Like the period before Romanticism emerged, we're in a creative crisis, living in the shadow of the previous era's huge influence, without a distinctive artistic style to call our own."
+
+That's where it began, with framing the problem. And then came the real magic, that *thing* that machines will find so hard to replicate. As he put it: "So I thought... if we're still showing 20th-century art in 21st-century exhibitions, why not go even further back? What about bringing Romanticism into the present?"
+
+This was the seed, the initial spark that started posterior creative process. Like a butterfly effect in motion, this simple idea underwent a series of transformations and mutations, eventually evolving into the final piece that captured both the irony and the deeper truth about our relationship with art today.
+
+## Are AI models creative already?
+
+Creativity is such a hard to define concept, but it is even harder to get an intuition of how it works. But usually it starts but framing a problem or question, and having a undefined initial artifact (usually a compose of our prior knowledge.) Then, as my uncle did, you start applying transformations, high-dimensional ones to the artifact, the answer, the information you want to transmit. However, this transformation are not obtained by gradient descent usually. They are a result of a divergent search, sometimes a no-goal search, or where the goal is the hyperbole, the exaggeration not convergence to an objective.
+
+Today’s state-of-the-art AI models, like LLMs and diffusion models, follow a standard paradigm: they receive a question or prompt and then generate what they predict to be an appropriate response. While these models are excellent at producing outputs within the distribution of their training data, they lack the ability to explore, combine, and transform this information in genuinely novel ways to create new and valuable knowledge.
+
+However, in the creative thinking context they have main two problems:
+
+### Creativity cannot be fully approximated using gradient descent
+
+AI models do not do divergent search, they optimize for an objective of what is statistically probable response to the prompt. That is exactly the anthithesis of being creative! The transformation that my uncle did: 
+
+Problem: 20-century paintings in 21-century expositions -> Transformation: Substract in the temporal dimension -> Result: Romanticism paintings in 21-century expositions
+
+is not a trivial transformation, one that can be obtained by applying gradient descent to the problem of finding the next token of the sequence.
+
+The way we prompt generative AI models is we prompt what we want to see and the model returns it. We prompt "A painting of an astronout in a horse in the Sun" and the model will output that image. But the decision, the creative effort is mine of identifying that prompt as something novel, the creativity of the model is limited by the creativity of the human prompting it. In our paper we try to improve this issue by exploring the space of artistic combinations, selecting novel ones and prompting them, however the problem remains. The text-to-image model is trained to output in-distribution images of the training data.
+
+### The training data is not aimed to creative thinking
+
+For example, text-to-image models like Stable diffusion are designed to take a description an ouput a probable image. However, they are not design to handle questions as a prompt and output a novel and valuable image. High quality art and creativity in general do not work like: I want to paint a dog and I paint it. Usually it begins with a question or an open-ended prompt: "Create a work of art whose purpose is to reject the logic, reason, and aestheticism of modern capitalist society and art", here there are no rules to answer this. The objective is to find an effective way of portraying this. How would you answer to this prompt? How would you tackle this problem? Stable-diffusion outputed Figure X. However, Marcel Duchamp outputed Figure X. The artwork *Fountain*, is not a trivial response to the promt, but it is a very very effective one. However, Stable diffusion is outputting an amalgam of what is common to see when you see the words "capitalist", "reason", "logic" or "reject". The prompt is the purpose that the Dadaism movement had when it was originated. Current AI models are not designed to learn this kind of non-trivial, divergent reasoning. However, I am still in doubt if this problem is because the model properties, or the problem properties, maybe the problem is not solvable by gradient descent. Or maybe is that is not being trained in the correct data. 
+
+I would be very curious to see what would happen if we collect a dataset in the form (idea that originated the artwork, image of the artwork) without information of what's in the artwork. Would the AI model able to learn these non trivial transformations and functions. Will it be able to generalize a function that takes a creative artistic problem and without explicit help of what objects it needs to portrait be able to obtain better and ingenious results, (in the form of image or in the form of text, imaging an LLM capable of designing a creative response to the artistic problem and then craft the prompt to its own text-to-image model)? As I said, I would be curious but my intution tells me that this would not work, mainly because of the nature of creativity. Maybe it would return surprising and cool results, but again we will be in the same problem. We are doing gradient descent in a task that is not suitable for it. 
+
+
+
+
+
+
+
 
 
 
