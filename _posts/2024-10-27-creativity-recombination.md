@@ -80,9 +80,9 @@ If you're interested, you can read the paper here. However, this post aims to ad
 
 <!add images!
 
-## The dynamics of Creativity
+## Dynamics of Creativity
 
-Now, let's dive into the tricky part: how creativity actually works in practice, how we create things that are both novel and high-quality.
+Now, let's dive into the tricky part: how creativity may work in practice, how we create things that are both novel and high-quality, what is its essence.
 
 When I was young and creating my own stories and worlds, I intuitively understood creativity as transformations in a high-dimensional space. I am not any genious, of course I didn't know what a was a high-dimensional space then, but I intuitively knew I was taking my existing knowledge and transforming it until it satisfied what I now understand as my internal aesthetic fitness function.
 
@@ -106,7 +106,37 @@ As I mentioned, when I asked my uncle about the origins of his artwork, he told 
 
 That's where it began, with framing the problem. And then came the real magic, that *thing* that machines will find so hard to replicate. As he put it: "So I thought... if we're still showing 20th-century art in 21st-century exhibitions, why not go even further back? What about bringing Romanticism into the present?"
 
-This was the seed, the initial spark that started posterior creative process. Like a butterfly effect in motion, this simple idea underwent a series of transformations and mutations, eventually evolving into the final piece that captured both the irony and the deeper truth about our relationship with art today.
+This was the seed, the initial spark that started the posterior creative process. Like a butterfly effect in motion, this simple idea underwent a series of transformations and mutations, eventually evolving into the final piece that captured both the irony and the deeper truth about our relationship with art today.
+
+However, we are computer scientists. We may have identified the seed of creativity, but how do we computationally unpack what my uncle actually did?
+
+Let me introduce an fascinating [concept](https://arxiv.org/abs/0812.4360) from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about data compression. 
+
+We live in an environment full of historical data: our entire record of actions, observations, experiences and reward signals. As intelligent systems, our primary goal is survival, which requires predicting environmental phenomena. We do this by identifying regularities and compressing information. To compress this history of observations, we create internal representations or symbols for elements that frequently recur. Even when predictability is limited, efficient compression is still possible by assigning shorter codes to events with high probability. For example, the sun rises daily, making it efficient to create an internal symbol like "daylight" to represent this consistent pattern, rather than repeatedly storing raw data. 
+
+In principle, any regularity in our data history can serve as a basis for compression. This compressed version of the data acts as a simplified explanation of our experiences, enabling us to process and predict the world more effectively.
+
+Creativity, then, is the ability to find novel and efective ways of compressing data, discovering overlooked regularities in our historical information. Thus, science and art are surprisingly similar, they're just approaching this compression differently.
+
+In the science case, for example, take Newton’s discovery of gravity. This was essentially a way of compressing a regular pattern in the data: things fall. With this insight, if we want to store the event of a lemon falling from a tree, we don’t need to save every single bit of every frame of it dropping. As soon as the lemon detaches from the tree, we can predict its entire trajectory based on the concept of gravity, saving a lot of space.
+
+Now look at Einstein’s theory of relativity. It’s a very novel and efficient data compression. Sure, the theory is complicated, but at its core, it boils down to: *The laws of physics are the same for all observers in inertial frames, and the speed of light in a vacuum is constant regardless of motion.* When this is assumed to be true, the rest of the theory and their implications unfold naturally, aligning with empirical observations. This means we no longer need to store certain bits of historical data explicitly, as they can be derived from the theory. Einstein essentially uncovered a new and very efficient way to compress the data of our universe, allowing us to predict real-world phenomena with precision, reducing the informational "storage cost" of storing our environment.
+
+Here's my take on extending this idea: Art works similarly, but with a twist. Science focuses on formally identifying and defining the nature of compression progress by discovering new regularities in the data, essentially creating efficient, predictive models of reality. Art, on the other hand, is about presenting information in a uniquely compressed way, with an emphasis on novelty and surprise rather than strict utility.
+
+My uncle didn't just recite a message, he compressed complex ideas about our relationship with art using paintings and weighing scales. Our job as observers is to decompress that information, and the beauty emerges from that very process of discovery.
+
+However, art is inherently subjective, and this subjectivity is perhaps its most defining characteristic. What is subjectivity if we are treating art as compressed information? Subjectivity arises from the differences in the historical data and knowledge representation between the artist and the observer.
+
+When we finally understand an artwork, we've discovered shared regularities in our collective experience. Even when we interpret things differently or have different backgrounds, we're drawing from fundamentally similar human experiences, similar historical data. That is why art works, and discovering these connections can evoke powerful emotional responses like crying, laughing, joy, or terror.
+
+The flip side is that if the observer is missing some part of the historical data or representations, they might not decompress the information exactly as the artist did. However, as I mentioned earlier, while this could be a problem in science, it’s not an issue in art. Art encodes information in a way that allows observers to uncover other regularities, leading to meaningful decompressions that are valuable to them personally. 
+
+For example, I might not fully understand Romanticism and thus cannot grasp my uncle's intended full message in the artwork. Yet, I could still interpret the weighting scales as black mirrors reflecting me observing the art, extracting a unique message about my own subjective experience. This is why art has no dead ends, it has no fixed rules. Unlike science, the decompression process in art can lead to entirely different and equally valid results.
+
+Again, Borges' Pierre Menard captured this perfectly. Even the same text can yield different information extraction for different people, based on their individual histories and associations.
+
+*Note: We are focusing in a more contemporary art style in this description, where the beaty in the realization of new regularities in the data is more obvious. More traditional paintings, as argued by Schmidhuber, also fulfill this. By applying geometry and appealing graphic ideas they compress data in an appealing and novel way.*
 
 ## Are AI models creative already?
 
