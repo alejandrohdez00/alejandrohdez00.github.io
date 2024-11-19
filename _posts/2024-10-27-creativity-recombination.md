@@ -51,7 +51,7 @@ Transformational creativity involves fundamentally changing how we think about s
 
 -add vanesh theory of creativity
 
-## Combinatorial creativity is still fire
+## Don't underestimate the power of Combinatorial creativity
 
 Combinatorial creativity is often considered the most basic form of creativity. While some studies suggest that LLMs are primarily limited to this type of creativity, lacking the deeper exploratory or transformative capabilities found in other forms [8], we shouldn't undervalue the power of combining different concepts.
 
@@ -65,8 +65,7 @@ In my Master's thesis, we explored this idea in the visual art domain. We hypoth
 
 Let me give you an example: the concept of an "airplane" simply didn't exist during the Renaissance period, making it cognitively unavailable to artists of that era. And even today, when we're familiar with both concepts, there's still this subtle bias against combining Renaissance style with airplanes (even if it could be a very cool idea). This relates to what cognitive scientists call availability bias - we heavily rely on immediate examples that come to mind when thinking about a topic, which can limit our exploration of novel ideas.
 
-Although trained across temporal and cultural boundaries, generative AI models inevitably absorb human biases. As a result, these models can
-expect to predominantly produce cultural artifacts that align with human cognitive availability. James Evans and his team showed that counteracting such a bias could be key to algorithmic augmented scientific discovery [5, 6].
+Although trained across temporal and cultural boundaries, generative AI models inevitably absorb human biases. As a result, these models can expect to predominantly produce cultural artifacts that align with human cognitive availability. James Evans and his team showed that counteracting such a bias could be key to algorithmic augmented scientific discovery [5, 6].
 
 We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - \\(P(a|S)\\), which captures the probability of finding concept A in an artwork that contains a set of concepts S. The second is the Artist-level distribution - \\(Q(a|S)\\), representing the probability of an artist using concept A given they've used concepts S in their whole artistic work.
 
@@ -76,7 +75,7 @@ This leads us to discover combinations that are hard to find or conceive natural
 
 Of course, we're making some assumptions here - like limiting our concept world to those used in WikiArt artworks, and assuming artists express all their conceptual knowledge in their work (which might not be realistic, an artist might know about something but choose never to paint it). But it gives us a interesting approximation of cognitive availability and lets us explore these low density or empty spaces of artistic combinations that have never been attempted and hard to even conceive of in our world (dataset).
 
-If you're interested, you can read the paper here. However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked. Our paper is merely a small step, a toy idea, compared to the progress that still lies ahead.
+If you're interested, you can read the paper [here](https://arxiv.org/abs/2411.11494.) However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked. Our paper is merely a small step, a toy idea, compared to the progress that still lies ahead.
 
 <!add images!
 
@@ -108,7 +107,7 @@ That's where it began, with framing the problem. And then came the real magic, t
 
 This was the seed, the initial spark that started the posterior creative process. Like a butterfly effect in motion, this simple idea underwent a series of transformations and mutations, eventually evolving into the final piece that captured both the irony and the deeper truth about our relationship with art today.
 
-However, we are computer scientists. We may have identified the seed of creativity, but how do we computationally unpack what my uncle actually did?
+However, we are computer scientists. We may have identified the seed of the creative process, but how do we computationally unpack what my uncle actually did?
 
 Let me introduce an fascinating [concept](https://arxiv.org/abs/0812.4360) from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about data compression. 
 
@@ -122,7 +121,7 @@ In the science case, for example, take Newton’s discovery of gravity. This was
 
 Now look at Einstein’s theory of relativity. It’s a very novel and efficient data compression. Sure, the theory is complicated, but at its core, it boils down to: *The laws of physics are the same for all observers in inertial frames, and the speed of light in a vacuum is constant regardless of motion.* When this is assumed to be true, the rest of the theory and their implications unfold naturally, aligning with empirical observations. This means we no longer need to store certain bits of historical data explicitly, as they can be derived from the theory. Einstein essentially uncovered a new and very efficient way to compress the data of our universe, allowing us to predict real-world phenomena with precision, reducing the informational "storage cost" of storing our environment.
 
-Here's my take on extending this idea: Art works similarly, but with a twist. Science focuses on formally identifying and defining the nature of compression progress by discovering new regularities in the data, essentially creating efficient, predictive models of reality. Art, on the other hand, is about presenting information in a uniquely compressed way, with an emphasis on novelty and surprise rather than strict utility.
+Here's my take on extending this idea: Art works similarly, but with a twist. Science focuses on formally identifying and defining the nature of compression progress by discovering new regularities in the data, essentially creating efficient, predictive models of reality. Art, on the other hand, is about presenting information in a uniquely compressed way, with an emphasis on novelty and surprise rather than strict prediction accuracy.
 
 My uncle didn't just recite a message, he compressed complex ideas about our relationship with art using paintings and weighing scales. Our job as observers is to decompress that information, and the beauty emerges from that very process of discovery.
 
@@ -130,13 +129,13 @@ However, art is inherently subjective, and this subjectivity is perhaps its most
 
 When we finally understand an artwork, we've discovered shared regularities in our collective experience. Even when we interpret things differently or have different backgrounds, we're drawing from fundamentally similar human experiences, similar historical data. That is why art works, and discovering these connections can evoke powerful emotional responses like crying, laughing, joy, or terror.
 
-The flip side is that if the observer is missing some part of the historical data or representations, they might not decompress the information exactly as the artist did. However, as I mentioned earlier, while this could be a problem in science, it’s not an issue in art. Art encodes information in a way that allows observers to uncover other regularities, leading to meaningful decompressions that are valuable to them personally. 
+The flip side is that if the observer is missing some part of the historical data or representations, they might not decompress the information exactly as the artist originally did. However, as I mentioned earlier, while this could be a problem in science, it’s not an issue in art. Art encodes information in a way that allows observers to uncover other regularities, leading to meaningful decompressions that are valuable to them personally. 
 
-For example, I might not fully understand Romanticism and thus cannot grasp my uncle's intended full message in the artwork. Yet, I could still interpret the weighting scales as black mirrors reflecting me observing the art, extracting a unique message about my own subjective experience. This is why art has no dead ends, it has no fixed rules. Unlike science, the decompression process in art can lead to entirely different and equally valid results.
+For example, I might not fully understand Romanticism history and thus cannot grasp my uncle's intended full message in the artwork. Yet, I could still interpret the weighting scales as black mirrors reflecting me observing the art, extracting a unique message about my own subjective experience. This is why art has no dead ends, it has no fixed rules. Unlike science, the decompression process in art can lead to entirely different and equally valid results.
 
 Again, Borges' Pierre Menard captured this perfectly. Even the same text can yield different information extraction for different people, based on their individual histories and associations.
 
-*Note: We are focusing in a more contemporary art style in this description, where the beaty in the realization of new regularities in the data is more obvious. More traditional paintings, as argued by Schmidhuber, also fulfill this. By applying geometry and appealing graphic ideas they compress data in an appealing and novel way.*
+*Note: We are focusing in a more contemporary art style in this description, where the beauty in the realization of new regularities in the data is more obvious. More traditional paintings, as argued by Schmidhuber, also fulfill this. By applying geometry and appealing graphic ideas they compress data in an appealing and novel way, painting less than the sum of its parts.*
 
 ## Are AI models creative already?
 
