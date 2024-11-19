@@ -67,7 +67,7 @@ Let me give you an example: the concept of an "airplane" simply didn't exist dur
 
 Although trained across temporal and cultural boundaries, generative AI models inevitably absorb human biases. As a result, these models can expect to predominantly produce cultural artifacts that align with human cognitive availability. James Evans and his team showed that counteracting such a bias could be key to algorithmic augmented scientific discovery [5, 6].
 
-We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - \\(P(a|S)\\), which captures the probability of finding concept A in an artwork that contains a set of concepts S. The second is the Artist-level distribution - \\(Q(a|S)\\), representing the probability of an artist using concept A given they've used concepts S in their whole artistic work.
+We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - P(a\|S), which captures the probability of finding concept A in an artwork that contains a set of concepts S. The second is the Artist-level distribution - Q(a\|S), representing the probability of an artist using concept A given they've used concepts S in their whole artistic work.
 
 The key difference between these distributions is their scope. If an artist has used concept A in one artwork and concept B in another, both concepts are within their cognitive reach, even if they've never combined them in a single piece. Our method looks for what we playfully call "alien" combinations (inspired by James Evans' work on alien scientific discoveries) by finding combinations that are surprisingly improbable in the artist-level distribution using a ranking system.
 
@@ -81,17 +81,14 @@ If you're interested, you can read the paper [here](https://arxiv.org/abs/2411.1
 
 ## Dynamics of Creativity
 
-Now, let's dive into the tricky part: how creativity may work in practice, how we create things that are both novel and high-quality, what is its essence.
+<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
+  <img src="https://nfgaleria.com/wp-content/uploads/2023/02/ultraleve_sala.jpg" alt="pipoart" style="max-width: 70%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;">Figure X: Ultraleve</p>
+</div>
 
-When I was young and creating my own stories and worlds, I intuitively understood creativity as transformations in a high-dimensional space. I am not any genious, of course I didn't know what a was a high-dimensional space then, but I intuitively knew I was taking my existing knowledge and transforming it until it satisfied what I now understand as my internal aesthetic fitness function.
+Now, let's dive into the tricky part: how creativity may work in practice, what is its essence.
 
-Take character creation, for instance. When developing a protagonist or villain, I'd start with someone I knew, real or fictional, and begin transforming and mutating their traits, their personality dimensions. I might want to make a character more villainous while keeping them humble, creating an intriguing contradiction that makes them more interesting. At around age 10-12, I was constantly observing people around me, collecting interesting personality traits and behaviors that could work well on my characters.
-
-I'd notice things like how someone smiles when embarrassed, or how another person accumulates anger silently before releasing it explosively in a stressful moment. By taking a bunch of these observations and modifying them, say, multiplying that suppressed anger dimension by 1000 (Yes, I know the multiplications here might seem unusual, but is a good way to visualize it), you can create a fascinating villain: someone who could be noble and humble but carries deep resentment that eventually erupts like a nuclear bomb, devastating everything around them. There are already famous characters that reflect this idea, though with more layers of complexity, like the Joker (the movie), Jinx from Arcane, and Eren from Shingeki no Kyojin.
-
-This process isn't limited to character development, it applies equally to world-building and plot structure. You're constantly mutating and transforming the artifact in your mind until it achieves that sweet spot desired of novelty, surprise, and value.
-
-This perspective led to an interesting conversation with my uncle about making an AI artist. I suggested that understanding creativity in computational terms, or at least having a detailed explanation of its mechanisms, could help to achieve this, if possible. Then, I asked him to recall how he came up with the idea for his latest artwork, which was exhibited at ARCO, Spain's International Contemporary Art Fair.
+This led to an interesting conversation with my uncle about making an AI artist. I suggested that understanding creativity in computational terms, or at least having a nuanced definition that can be approximated by a program, could help to achieve this, if possible. Therefore, I asked him to recall how he came up with the idea for his latest artwork, which was exhibited at ARCO, Spain's International Contemporary Art Fair.
 
 Explaining this artistic piece goes against its essence, but trust me, we could discuss its intricacies for hours. Still, I’ll try to focus on the main point. As you can see in Figure X, the piece consists of a wall displaying Romanticism paintings with black weighing scales on the floor. The mere presence of Romantic paintings in a Contemporary Art fair is already surprising, but the piece explores current dialogue mechanism between artwork and spectator.
 
