@@ -17,7 +17,7 @@ mathjax: true
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-"Art is a mechanism that is always trying to destroy itself, always questioning what is or not is art"
+*"Art is a mechanism that is always trying to destroy itself, always questioning what is or not is art"*
 
 
 Those were the words my uncle, the artist Pipo Hernandez, shared with me over dinner at his house while we discussed whether AI could truly be an artist. (If you're curious about his work, you can check it out [here](https://nfgaleria.com/artista/pipo-hernandez-rivero/) - I absolutely love it!)
@@ -26,15 +26,7 @@ A few months later, I found myself defending my Master's thesis, "Alien Recombin
 
 Our project explored ways to improve artificial creativity, an admittedly ambitious goal for a master's thesis. To be honest, we couldn't hope to fully address such a complex challenge, especially since we're still discovering new dimensions of the problem itself.
 
-In this post, I want to share my thoughts about the nature of creativity and the challenges of implementing it in machines, along with potential paths forward. This isn't meant to be a scientific article, think of it more as an invitation to dialogue, a way to organize my thoughts and hopefully inspire others to become as passionate about this topic as I am.
-
-
-To-do:
-- Boden creativity
-- Remember and imagination as reconstruction
-- Our thesis and our hypothesis
-- Creative reasoning is very difficult to track, but it could composed of multiple transformations in an multidimensional space
-- Open-endedness
+In this post, I want to share my thoughts about the nature of creativity, interesting theories I have read and the challenges of implementing it in machines, along with potential paths forward. This isn't meant to be a scientific article, think of it more as an invitation to dialogue, a way to organize my thoughts and hopefully inspire others to become as passionate about this topic as I am.
 
 ## What is creativity?
 
@@ -73,13 +65,13 @@ The key difference between these distributions is their scope. If an artist has 
 
 This leads us to discover combinations that are hard to find or conceive naturally because they contain concepts that are unavailable to all artists that have used a given set of concepts. For instance, no artist who worked in the Renaissance style could have known about airplanes. If they did, that would mean these concepts had coexisted in time or imagination (or that Renaissance style has returned in mainstream art, that has not happened as far as I know.)
 
-Of course, we're making some assumptions here - like limiting our concept world to those used in WikiArt artworks, and assuming artists express all their conceptual knowledge in their work (which might not be realistic, an artist might know about something but choose never to paint it). But it gives us a interesting approximation of cognitive availability and lets us explore these low density or empty spaces of artistic combinations that have never been attempted and hard to even conceive of in our world (dataset).
+Of course, we're making some assumptions here, like limiting our concept world to those used in WikiArt artworks, and assuming artists express all their conceptual knowledge in their work (which might not be realistic, an artist might know about something but choose never to paint it). But it gives us a interesting approximation of cognitive availability and lets us explore these low density or empty spaces of artistic combinations that have never been attempted and hard to even conceive of in our world (dataset).
 
 If you're interested, you can read the paper [here](https://arxiv.org/abs/2411.11494.) However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked. Our paper is merely a small step, a toy idea, compared to the progress that still lies ahead.
 
 <!add images!
 
-## Dynamics of Creativity
+## Creativity is Divergent
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
   <img src="https://nfgaleria.com/wp-content/uploads/2023/02/ultraleve_sala.jpg" alt="pipoart" style="max-width: 100%; height: auto;">
@@ -104,9 +96,15 @@ That's where it began, with framing the problem. And then came the real magic, t
 
 This was the seed, the initial spark that started the posterior creative process. Like a butterfly effect in motion, this simple idea underwent a series of transformations and mutations, eventually evolving into the final piece that captured both the irony and the deeper truth about our relationship with art today.
 
-However, we are computer scientists. We may have identified the seed of the creative process, but how do we computationally unpack what my uncle actually did?
+The brilliance of this approach shows exactly why machines struggle with creativity. While current AI can analyze patterns and mix pixels or words in statistically likely ways, it can't truly venture into out-of-distribution spaces without failing. My uncle's creative leap wasn't just about combining different time periods - it came from asking an unlikely question about his environment and current knowledge, then trying to answer. 
 
-Let me introduce a fascinating [concept](https://arxiv.org/abs/0812.4360) from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about finding data compressions. 
+AI models excel at generating good responses, but they lack the ability to ask good questions that serve as stepping stones to greater insights. Divergent thinking doesn’t arise from gradient descent, which is designed to follow the steepest path to minimize a loss function. Instead, it is driven by curiosity, intentionally exploring unknown areas looking for something interesting. Where AI models see noise, human curiosity might find opportunity, a chance to discover novel and unexplored solutions rather than just optimize within known boundaries.
+
+## Searching for Compression
+
+However, we are computer scientists. We may have identified the essence of the creative process, asking interesting questions through a divergent process, but how can we translate this into a computational framework?
+
+Let me introduce a curious [concept](https://arxiv.org/abs/0812.4360)[] from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about finding data compressions. 
 
 We live in an environment full of historical data: our entire record of actions, observations, experiences and reward signals. Simple explanations of the past often reflect some repetitive patterns, which are useful for predicting the future. Therefore, any intelligent system aiming to achieve future goals should be driven to compress its sensory history. To achieve this, we identify regularities and create compact internal representations or symbols for frequently recurring elements. Even when predictions aren't perfect, we can still compress data effectively by using shorter codes for events that occur with very high probability. For example, since the sun rises every day, it’s efficient to create a symbol like "daylight" to represent this recurring event, rather than continuously storing raw sensory data about each sunrise. 
 
@@ -114,11 +112,13 @@ In principle, any regularity in our data history can serve as a basis for compre
 
 *Interestingly* we can define beauty and interestingness in this context. Given a subjective observer *O*, we can identify the subjective beauty of an artifact *D* for *O* as being proportional to the number of bits required to encode *D*, given the observer's limited prior knowledge. For example, to efficiently encode previously seen human faces, we might create an internal representation of a "prototype" face. When encoding a new face, the system only needs to record the deviations from this prototype, significantly reducing the amount of information required. Therefore, something appears beautiful when it fits easily into our current representation, like a face that closely matches our mental "prototype", or a mathematical proof that can be expressed simply. This is why we often find symmetrical or proportional things beautiful, and why we tend to find faces beautiful when they remind us of faces we see often, including our own.
 
-However, what is beautiful is not always interesting. A beautiful object is interesting only as long as it remains novel - while the observer is still learning to compress the data effectively by identifying the algorithmic regularities that make it simple. Once these regularities are fully encoded and the compression is optimized, the novelty fades, and the observer's interest diminishes.
+However, what is beautiful is not always interesting. A beautiful object is interesting only as long as it remains novel - while the observer is still learning to compress the data effectively by identifying the algorithmic regularities that make it simple. Once these regularities are fully encoded and the compression is optimized, the novelty vanishes, and the observer's interest diminishes.
 
 Then, interestingness can be understood as the derivative of beauty. As the observer improves their compression algorithm, data that initially seemed random becomes more regular and easier to encode, requiring fewer bits. The data remains interesting and rewarding as long as the process of improving compression continues.
 
-So how does creativity fit into this perspective of compression? Creativity is the ability to find novel, meaningful and effective ways of compressing data, discovering overlooked regularities in our historical information. Thus, science and art are surprisingly similar, they're just approaching this compression differently.
+As a result, curiosity can be defined as the search for interestingness, the drive to explore on experiences that are currently incompressible but are expected to become compressible with further learning, maximizing the potential for future understanding and compression progress. It involves actively seeking novelty and avoiding both fully predictable (boring) and seemingly irreducible (unlearnable) phenomena. I like to think of this as a movie. If you could predict all the subsequent frames just by looking at one, the movie would be predictable and boring. However, if each frame were completely unpredictable based on the previous one, the movie would become chaotic and unlearnable.
+
+But how does creativity fit into this perspective of compression? Intuitively, creativity is the ability to find novel, meaningful and effective ways of compressing data, discovering overlooked regularities in our historical information. Thus, science and art are surprisingly similar, they're just approaching this compression differently.
 
 Science has historically proceeded incrementally, analyzing just a small aspect of the world at any given time, trying to find simple laws that allow for describing their limited
 observations better than the best previously known law, essentially trying to find a program that compresses the observed data better than the best previously known program. For example, take Newton’s discovery of gravity. This was essentially a way of compressing a regular pattern in the data: things fall. With this insight, if we want to store the event of a lemon falling from a tree, we don’t need to save every single bit of every frame of it dropping. As soon as the lemon detaches from the tree, we can predict its entire trajectory based on the concept of gravity, saving a lot of space.
@@ -127,7 +127,7 @@ Now look at Einstein’s theory of relativity. It’s a very novel and efficient
 
 Art, in contrast, is a more elusive domain. Extending this idea of compression to art, we can see parallels but also key differences. Science focuses on formally identifying and defining a compression rule by discovering new regularities in the data, essentially creating efficient, predictive models of reality. Art, on the other hand, is about presenting information in a uniquely compressed way, with an emphasis on novelty than strict prediction accuracy.
 
-My uncle didn't just recite a message, he compressed complex ideas about our relationship with Art using paintings and weighing scales. As an artist, his role was to carefully select and compress intricate meanings into a few bits (pixels on a painting, words in a poem, or other media). Our role as subjective observers is to decompress this information, extracting meaning from it.
+My uncle didn't just recite a message, he compressed complex ideas about our relationship with Art combining paintings and weighting scales. As an artist, his role was to carefully select and compress intricate meanings into a few bits (pixels on a painting, words in a poem, or the scenario of paintings and weighting scales). Our role as subjective observers is to decompress this information, extracting meaning from it.
 
 However, Art is inherently subjective, and this subjectivity is perhaps its most defining characteristic. What is subjectivity if we are treating art as compressed information? Subjectivity arises from the differences in the historical data and knowledge representation between the artist and the observer.
 
@@ -142,29 +142,43 @@ For example, I might not fully understand Romanticism history and thus cannot gr
 Again, Borges' *Pierre Menard* captures this concept beautifully. Even an identical text can produce entirely different interpretations depending on the observer's individual history and associations.
 
 
-## Are AI models creative already?
+## Are AI Models Already Creative?
 
-Creativity is such a hard to define concept, but it is even harder to get an intuition of how it works. But usually it starts but framing a problem or question, and having a undefined initial artifact (usually a compose of our prior knowledge.) Then, as my uncle did, you start applying transformations, high-dimensional ones to the artifact, the answer, the information you want to transmit. However, this transformation are not obtained by gradient descent usually. They are a result of a divergent search, sometimes a no-goal search, or where the goal is the hyperbole, the exaggeration not convergence to an objective.
+Artificial Neural Networks excel at automatically representing and compressing data, effectively separating different patterns within it. While Schmidhuber's theory suggests AI models might already be creative, there's a crucial distinction to make: though they can effectively compress historical data, they lack two fundamental aspects of creativity, the ability to search for "interestingness" and the capacity to create artifacts that compress previously unseen and undetected regularities. What they actually do is compress existing data well, providing some generalization in lower dimensions based on the data's inherent behavior. However, they cannot search for and output novel insights about their environment or knowledge base. They lack a transformative approach to creativity.
 
-Today’s state-of-the-art AI models, like LLMs and diffusion models, follow a standard paradigm: they receive a question or prompt and then generate what they predict to be an appropriate response. While these models are excellent at producing outputs within the distribution of their training data, they lack the ability to explore, combine, and transform this information in genuinely novel ways to create new and valuable knowledge.
+Let me give you an example that I think really illustrates this point. Take text-to-image models like Stable Diffusion. They can take a description and create a probable image, but they're not able to handle questions as prompts and respond with truly novel, valuable images. In my experience, high-quality art and creativity rarely work like "I want to paint a dog, so I paint it." Instead, they often start with a question or an open-ended artistic intention. Here's one that was very trendy in its time: "Create a work of art whose purpose is to reject the logic, reason, and aestheticism of modern capitalist society and art."
 
-However, in the creative thinking context they have main two problems:
+There are no predetermined rules for responding to this prompt. The real challenge lies in finding an effective way to portray (compress) this concept. As observed in Figure X, when given this prompt, Stable Diffusion typically outputs an amalgamation of common visual elements associated with words like "capitalist," "reason," "logic," or "reject." In contrast, Marcel Duchamp responded to this artistic intention (created by himself) with *Fountain*. Not a trivial response, but an extraordinarily effective (and compressed) one. Current AI models aren't designed to learn this kind of non-trivial, divergent reasoning. The question remains whether this limitation arises from the models' properties, the nature of the problem itself (probably it's not solvable through gradient descent), or simply that we're not training models on the right kind of data.
 
-### Creativity cannot be fully approximated using gradient descent
+Some work suggest that including information about artwork generation context could improve results by helping models learn to relate context and idea origination to images. An interesting experiment would be to collect a dataset pairing original artistic ideas with their resulting artworks, without including explicit information about what's in the artwork. Could an AI model learn these non-trivial transformations and functions? Could it generalize a function that takes a creative artistic problem and, without explicit guidance about what objects to portray, produce ingenious results (either as images or as text, imagining an LLM capable of designing a creative response and then crafting the prompt for its own text-to-image model)? While interesting, my intuition suggests this wouldn't work, primarily due to the fundamental nature of creativity. We might get surprising and interesting results, but we'd still be applying gradient descent to a task that may not be suitable for it.
 
-AI models do not do divergent search, they optimize for an objective of what is statistically probable response to the prompt. That is exactly the anthithesis of being creative! The transformation that my uncle did: 
+When it comes to LLMs, the challenges are similar, though I'm more optimistic about their future. Having been trained on so much human experience, they're remarkably good at aligning with human interests. I could see them potentially directing the search for interestingness in other exploratory agents, something more sophisticated than what we explored in our combinatorial creativity paper, where we used LLM-learned probabilities to search over the space of unexplored artistic concept combinations.
 
-Problem: 20-century paintings in 21-century expositions -> Transformation: Substract in the temporal dimension -> Result: Romanticism paintings in 21-century expositions
+Regarding creativity in LLMs, I often hear people claim that increasing an LLM's temperature parameter makes it more creative, but I think this misunderstands both creativity and what temperature actually does. Raising the temperature just flattens the distribution of tokens in the output layer, increasing the variance of the results. But that's not how creativity works, and research has shown it barely affects the novelty of outputs in creative tasks like story writing.
 
-is not a trivial transformation, one that can be obtained by applying gradient descent to the problem of finding the next token of the sequence.
+A more interesting study involves participants asked to write a story that will be evaluated by humans. Some participants are allowed to use a large language model (LLM) to help, while others are not. Prior to the experiment, participants took a creativity test. The findings show that access to generative AI results in stories being rated as more creative, better written, and more enjoyable, particularly among less creative writers. However, AI-assisted stories are more similar to each other than human-written stories, and highly creative individuals saw little improvement when using LLMs. I would also have included the results of the creativity test for the evaluators. My intuition is that people who believe LLMs are highly creative might not be very creative themselves or may not be used to highly creative environments.
 
-The way we prompt generative AI models is we prompt what we want to see and the model returns it. We prompt "A painting of an astronout in a horse in the Sun" and the model will output that image. But the decision, the creative effort is mine of identifying that prompt as something novel, the creativity of the model is limited by the creativity of the human prompting it. In our paper we try to improve this issue by exploring the space of artistic combinations, selecting novel ones and prompting them, however the problem remains. The text-to-image model is trained to output in-distribution images of the training data.
+In short, I don't believe AI models can yet be classified as truly creative. In fact, they've been shown to make human creative outputs more similar to each other, something that shouldn't happen if they were divergent thinkers instead of convergent.
 
-### The training data is not aimed to creative thinking
+On the other hand, some artists, like Ted Chiang (the author of the beautiful *Story of Your Life*, which inspired the movie *Arrival*), argue that AI will never be an artist. Chiang claims that creating art involves making countless small, intentional decisions (every word chosen with purpose, every frame in a John Ford movie, every brushstroke in a painting). A system that generates probable outputs based on a brief prompt, he says, won't truly understand or grasp the nuances of artistic creation. While I agree with Chiang that art involves constantly taking fine, crucial decisions, I believe this doesn’t rule out the potential for future AI systems. From the perspective of creativity as compression, each decision is made to resonate with the audience, conveying more than just the combination of words or brushtrokes. I believe we can design AI systems capable of divergent thinking, producing creative artifacts, whether artistic or not.
 
-For example, text-to-image models like Stable diffusion are designed to take a description an ouput a probable image. However, they are not design to handle questions as a prompt and output a novel and valuable image. High quality art and creativity in general do not work like: I want to paint a dog and I paint it. Usually it begins with a question or an open-ended prompt: "Create a work of art whose purpose is to reject the logic, reason, and aestheticism of modern capitalist society and art", here there are no rules to answer this. The objective is to find an effective way of portraying this. How would you answer to this prompt? How would you tackle this problem? Stable-diffusion outputed Figure X. However, Marcel Duchamp outputed Figure X. The artwork *Fountain*, is not a trivial response to the promt, but it is a very very effective one. However, Stable diffusion is outputting an amalgam of what is common to see when you see the words "capitalist", "reason", "logic" or "reject". The prompt is the purpose that the Dadaism movement had when it was originated. Current AI models are not designed to learn this kind of non-trivial, divergent reasoning. However, I am still in doubt if this problem is because the model properties, or the problem properties, maybe the problem is not solvable by gradient descent. Or maybe is that is not being trained in the correct data. 
+## Open-endedness and evolution
 
-I would be very curious to see what would happen if we collect a dataset in the form (idea that originated the artwork, image of the artwork) without information of what's in the artwork. Would the AI model able to learn these non trivial transformations and functions. Will it be able to generalize a function that takes a creative artistic problem and without explicit help of what objects it needs to portrait be able to obtain better and ingenious results, (in the form of image or in the form of text, imaging an LLM capable of designing a creative response to the artistic problem and then craft the prompt to its own text-to-image model)? As I said, I would be curious but my intution tells me that this would not work, mainly because of the nature of creativity. Maybe it would return surprising and cool results, but again we will be in the same problem. We are doing gradient descent in a task that is not suitable for it. 
+As Kenneth O. Stanley argued, I truly belive that the future of AI systems lies in their creativity. After all, our creative capabilities are what make humans special. They've enabled us not just to survive, but to push boundaries, discover new knowledge, and connect with our fundamental nature.
+
+While current AI systems aren't fully creative, there are promising approaches to implementing creativity in machines, as we have seen in this post. I believe we need to design systems that can explore environments without clear reward signals, systems that can propose their own questions and problems based on their environment, much as my uncle did when designing his artwork.
+
+The concept of open-endedness as defined here offers a very promising framework. It's defined as the ability to continuously generate novel and learnable artifacts or behaviors that are unpredictable yet meaningful to an observer. This definition shares parallels with compression progress theory, particularly in how it values novelty and learnability. If something is too predictable, it's boring (low learnability). But if it's completely unpredictable, it becomes impossible to learn from, it's also boring.
+
+Take AlphaGo as an example of a simple open-ended system. Throughout its training, it developed policies that were genuinely novel to human experts, making moves that professional players would consider highly improbable, yet proved effective. Moreover, it has been shown that human players could actually improve their game by studying and learning from AlphaGo's unexpected strategies.
+
+Looking ahead, I believe open-endedness is essential for truly creative AI systems. Creativity isn't just about novelty - it's about producing artifacts that are both novel and interesting to observers. One exciting direction might be combining evolutionary algorithms with multiple open-ended systems. Scientific domains could be particularly promising, as they offer rule-based environments where we can verify discoveries against empirical data. These systems could potentially build upon their own discoveries, using them as stepping stones to further innovation.
+
+On the other hand, Art presents an even more difficult challenge. Unlike science, art is inherently open-ended, with perhaps only one rule: constantly questioning what art is. While human art evolves through complex cultural processes involving multiple perspectives and external influences, we might be able to simulate something similar in AI. Imagine multiple open-ended systems evaluating each other's artifacts and learning divergently through an evolutionary process, creating art in an "alien" way, where the human is no longer the subjective observer.
+
+
+
+
 
 
 
@@ -192,3 +206,7 @@ I would be very curious to see what would happen if we collect a dataset in the 
 [7] Boden, M. A. (2004). The creative mind: Myths and mechanisms. Routledge.
 
 [8] Franceschelli, G., & Musolesi, M. (2023). On the creativity of large language models. arXiv preprint arXiv:2304.00008.
+
+[] Schmidhuber, J. (2008, June). Driven by compression progress: A simple principle explains essential aspects of subjective beauty, novelty, surprise, interestingness, attention, curiosity, creativity, art, science, music, jokes. In Workshop on anticipatory behavior in adaptive learning systems (pp. 48-76). Berlin, Heidelberg: Springer Berlin Heidelberg.
+
+[] Dreyfus, H. L. (1972). What computers can’t do: The limits of artificial intelligence.
