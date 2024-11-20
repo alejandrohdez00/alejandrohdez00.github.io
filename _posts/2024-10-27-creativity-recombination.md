@@ -6,7 +6,7 @@ mathjax: true
 
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="/assets/images/art-mechanism.png" alt="art-mechanism" style="max-width: 100%; height: auto;">
+  <img src="/assets/images/art-mechanism.png" alt="art-mechanism" style="max-width: 70%; height: auto;">
   <p style="text-align: center; margin-top: 10px;"></p>
 </div>
 
@@ -162,7 +162,7 @@ Regarding the Art domain, some artists, like Ted Chiang (the author of the beaut
 
 Life is inherently open-ended. As humans evolved from mere survival to beings of higher reasoning, we became detached from our primal goals, leaving us without a clear, definitive purpose. Similarly, Art has an open-ended nature. It began as a way to leave a mark on the world and communicate a message but has transformed through cultural evolution into an ever-shifting and elusive domain. Once, we painted what we saw; then, we painted gods. When gods fell, we painted ourselves, and later, when there was anything left we started breaking the very rules we created. Currently, Art follows one guiding principle: to perpetually destroy itself, always questioning what it is, or isn’t.
 
-The concept of open-endedness, pioneered by Kenneth Stanley among othes and further defined in the Open-endedness position paper, feels fundamental to me. It's defined as the ability to continuously generate novel and learnable artifacts or behaviors that are unpredictable yet meaningful to an observer. This definition shares parallels with compression progress theory, particularly in how it values novelty and learnability. If something is too predictable, it's boring (low learnability). But if it's completely unpredictable, it becomes impossible to learn from, it's also boring.
+The concept of open-endedness, pioneered by Kenneth Stanley among others (earlier Schmidhuber's approaches, while not defined exactly in this way, are closely related to this concept), and further defined in the Open-endedness position paper, feels fundamental to me. It's defined as the ability to continuously generate novel and learnable artifacts or behaviors that are unpredictable yet meaningful to an observer. This definition shares parallels with compression progress theory, particularly in how it values novelty and learnability. If something is too predictable, it's boring (low learnability). But if it's completely unpredictable, it becomes impossible to learn from, it's also boring.
 
 Take AlphaGo as an example of a simple open-ended system. Throughout its training, it developed policies that were genuinely novel to human experts, making moves that professional players would consider highly improbable, yet proved effective. Moreover, it has been shown that human players could actually improve their game by studying and learning from AlphaGo's unexpected strategies.
 
