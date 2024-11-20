@@ -4,31 +4,26 @@ date: 2024-10-27
 mathjax: true
 ---
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-    
-<script type="text/javascript"
-        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+
+<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
+  <img src="/assets/images/art-mechanism.png" alt="art-mechanism" style="max-width: 100%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;"></p>
+</div>
 
 *"Art is a mechanism that is always trying to destroy itself, always questioning what is or not is art"*
 
 
-Those were the words my uncle, the artist Pipo Hernandez, shared with me over dinner at his house while we discussed whether AI could truly be an artist. (If you're curious about his work, you can check it out [here](https://nfgaleria.com/artista/pipo-hernandez-rivero/) - I absolutely love it!)
+Those were the words my uncle, the artist Pipo Hernandez, shared with me over dinner at his house while we discussed whether AI could truly be an artist. (If you're curious about his work, you can check it out [here](https://nfgaleria.com/artista/pipo-hernandez-rivero/), I absolutely love it!)
 
 A few months later, I found myself defending my Master's thesis, "Alien Recombination: Exploring Concept Blends Beyond Human Cognitive Availability" at the Technical University of Munich. I had the privilege to conduct this research alongside a brilliant team from both the Max Planck Institute for Human Development and the Max Planck Institute for Intelligent Systems.
 
 Our project explored ways to improve artificial creativity, an admittedly ambitious goal for a master's thesis. To be honest, we couldn't hope to fully address such a complex challenge, especially since we're still discovering new dimensions of the problem itself.
 
-In this post, I want to share my thoughts about the nature of creativity, interesting theories I have read and the challenges of implementing it in machines, along with potential paths forward. This isn't meant to be a scientific article, think of it more as an invitation to dialogue, a way to organize my thoughts and hopefully inspire others to become as passionate about this topic as I am.
+In this post, I want to share my thoughts about the nature of creativity, interesting theories I have read and the challenges of implementing it in machines, along with potential paths forward. Moreover, we will focus more in Art, the human pinnacle of creativity.
 
-## What is creativity?
+This isn't meant to be a scientific article, think of it more as an invitation to dialogue, a way to organize my thoughts and hopefully inspire others to become as passionate about this topic as I am.
+
+## Types of Creativity
 
 Creativity is one of those concepts that seems to slip through our fingers just when we think we've grasped it. Some view it as a process that emerges from imagination [1], where imagination is seen as a reconstructive process based on prior knowledge [2]. Others define it as the process by which an individual generates new ideas or patterns using the symbols of a given domain [3]. Additionally, some interpretations view creativity as a fully combinatorial process, involving the combination of existing representations [4][5]. 
 
@@ -41,7 +36,6 @@ Exploratory creativity is about finding new solutions within established framewo
 
 Transformational creativity involves fundamentally changing how we think about something. Think of Einstein's theory of relativity revolutionizing our understanding of space and time, or how Picasso's cubist paintings transformed 20th-century artistic expression.
 
--add vanesh theory of creativity
 
 ## Don't underestimate the power of Combinatorial Creativity
 
@@ -104,7 +98,9 @@ AI models excel at generating good responses, but they lack the ability to ask g
 
 However, we are computer scientists. We may have identified the essence of the creative process, asking interesting questions through a divergent process, but how can we translate this into a computational framework?
 
-Let me introduce a curious [concept](https://arxiv.org/abs/0812.4360)[] from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about finding data compressions. 
+I find particularly interesting Varshney work on defining creativity in a mathematical way. His framework establishes creativity as a formal optimization problem that balances novelty and quality in a combinatorial space. He shows that the fundamental tradeoff in creativity is similar to Shannon's capacity-cost function from communication theory, a connection we will explore further. While his research suggest that communicative intent may constrain both quality and novelty of creative artifacts due to information rate limitations, I believe the framework has an essential limitation: it takes a static global view of creativity. This is evident in how it treats quality as a fixed measure and assumes that novelty of the artifact should be measured against all the remaining artifacts in the domain. Then, the framework is overlooking the role of subjective observers, whose perspectives determine whether an artifact is perceived as novel or interesting, allowing for different creativity evaluations for the same artifact.
+
+Now, let me introduce a curious [concept](https://arxiv.org/abs/0812.4360)[] from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about finding data compressions. 
 
 We live in an environment full of historical data: our entire record of actions, observations, experiences and reward signals. Simple explanations of the past often reflect some repetitive patterns, which are useful for predicting the future. Therefore, any intelligent system aiming to achieve future goals should be driven to compress its sensory history. To achieve this, we identify regularities and create compact internal representations or symbols for frequently recurring elements. Even when predictions aren't perfect, we can still compress data effectively by using shorter codes for events that occur with very high probability. For example, since the sun rises every day, it’s efficient to create a symbol like "daylight" to represent this recurring event, rather than continuously storing raw sensory data about each sunrise. 
 
@@ -154,40 +150,32 @@ Some work suggest that including information about artwork generation context co
 
 When it comes to LLMs, the challenges are similar, though I'm more optimistic about their future. Having been trained on so much human experience, they're remarkably good at aligning with human interests. I could see them potentially directing the search for interestingness in other exploratory agents, something more sophisticated than what we explored in our combinatorial creativity paper, where we used LLM-learned probabilities to search over the space of unexplored artistic concept combinations.
 
-Regarding creativity in LLMs, I often hear people claim that increasing an LLM's temperature parameter makes it more creative, but I think this misunderstands both creativity and what temperature actually does. Raising the temperature just flattens the distribution of tokens in the output layer, increasing the variance of the results. But that's not how creativity works, and research has shown it barely affects the novelty of outputs in creative tasks like story writing.
+I often hear people claim that increasing an LLM's temperature parameter makes it more creative, but I think this misunderstands both creativity and what temperature actually does. Raising the temperature just flattens the distribution of tokens in the output layer, increasing the variance of the results. But that's not how creativity works, and research has shown it barely affects the novelty of outputs in creative tasks like story writing.
 
 A more interesting study involves participants asked to write a story that will be evaluated by humans. Some participants are allowed to use a large language model (LLM) to help, while others are not. Prior to the experiment, participants took a creativity test. The findings show that access to generative AI results in stories being rated as more creative, better written, and more enjoyable, particularly among less creative writers. However, AI-assisted stories are more similar to each other than human-written stories, and highly creative individuals saw little improvement when using LLMs. I would also have included the results of the creativity test for the evaluators. My intuition is that people who believe LLMs are highly creative might not be very creative themselves or may not be used to highly creative environments.
 
-In short, I don't believe AI models can yet be classified as truly creative. In fact, they've been shown to make human creative outputs more similar to each other, something that shouldn't happen if they were divergent thinkers instead of convergent.
+In short, if we define creativity as the ability to produce novel and valuable artifacts, AI models can be seen as creative by some set of subjective observers. However, their creativity is limited to specific, well-defined contexts (and to the subjective creative threshold of the observer). Unlike humans, who approach open-ended creative tasks through a divergent process, AI relies on convergent thinking. As we have seen, this heavily constrains their ability to create truly groundbreaking artifacts or discover entirely new regularities and knowledge. Divergent thinking is essential for innovation in environments without clear rules or objectives. In fact, studies suggest that AI can make human creative outputs more uniform, something that shouldn't happen if they were divergent thinkers instead of convergent.
 
-On the other hand, some artists, like Ted Chiang (the author of the beautiful *Story of Your Life*, which inspired the movie *Arrival*), argue that AI will never be an artist. Chiang claims that creating art involves making countless small, intentional decisions (every word chosen with purpose, every frame in a John Ford movie, every brushstroke in a painting). A system that generates probable outputs based on a brief prompt, he says, won't truly understand or grasp the nuances of artistic creation. While I agree with Chiang that art involves constantly taking fine, crucial decisions, I believe this doesn’t rule out the potential for future AI systems. From the perspective of creativity as compression, each decision is made to resonate with the audience, conveying more than just the combination of words or brushtrokes. I believe we can design AI systems capable of divergent thinking, producing creative artifacts, whether artistic or not.
+Regarding the Art domain, some artists, like Ted Chiang (the author of the beautiful *Story of Your Life*, which inspired the movie *Arrival*), argue that AI will never be an artist. Chiang claims that creating art involves making countless small, intentional decisions (every word chosen with purpose, every frame in a John Ford movie, every brushstroke in a painting). A system that generates probable outputs based on a brief prompt, he says, won't truly understand or grasp the nuances of artistic creation. While I agree with Chiang that art involves constantly taking fine, crucial decisions, I believe this doesn’t rule out the potential for future AI systems. From the perspective of creativity as compression, each decision is made to resonate with the audience, conveying more than just the combination of words or brushtrokes. I believe we can design AI systems capable of divergent thinking, producing creative artifacts, whether artistic or not.
 
-## Open-endedness and evolution
+## Open-endedness
 
-As Kenneth O. Stanley argued, I truly belive that the future of AI systems lies in their creativity. After all, our creative capabilities are what make humans special. They've enabled us not just to survive, but to push boundaries, discover new knowledge, and connect with our fundamental nature.
+Life is inherently open-ended. As humans evolved from mere survival to beings of higher reasoning, we became detached from our primal goals, leaving us without a clear, definitive purpose. Similarly, Art has an open-ended nature. It began as a way to leave a mark on the world and communicate a message but has transformed through cultural evolution into an ever-shifting and elusive domain. Once, we painted what we saw; then, we painted gods. When gods fell, we painted ourselves, and later, when there was anything left we started breaking the very rules we created. Currently, Art follows one guiding principle: to perpetually destroy itself, always questioning what it is, or isn’t.
 
-While current AI systems aren't fully creative, there are promising approaches to implementing creativity in machines, as we have seen in this post. I believe we need to design systems that can explore environments without clear reward signals, systems that can propose their own questions and problems based on their environment, much as my uncle did when designing his artwork.
-
-The concept of open-endedness as defined here offers a very promising framework. It's defined as the ability to continuously generate novel and learnable artifacts or behaviors that are unpredictable yet meaningful to an observer. This definition shares parallels with compression progress theory, particularly in how it values novelty and learnability. If something is too predictable, it's boring (low learnability). But if it's completely unpredictable, it becomes impossible to learn from, it's also boring.
+The concept of open-endedness, pioneered by Kenneth Stanley among othes and further defined in the Open-endedness position paper, feels fundamental to me. It's defined as the ability to continuously generate novel and learnable artifacts or behaviors that are unpredictable yet meaningful to an observer. This definition shares parallels with compression progress theory, particularly in how it values novelty and learnability. If something is too predictable, it's boring (low learnability). But if it's completely unpredictable, it becomes impossible to learn from, it's also boring.
 
 Take AlphaGo as an example of a simple open-ended system. Throughout its training, it developed policies that were genuinely novel to human experts, making moves that professional players would consider highly improbable, yet proved effective. Moreover, it has been shown that human players could actually improve their game by studying and learning from AlphaGo's unexpected strategies.
 
-Looking ahead, I believe open-endedness is essential for truly creative AI systems. Creativity isn't just about novelty - it's about producing artifacts that are both novel and interesting to observers. One exciting direction might be combining evolutionary algorithms with multiple open-ended systems. Scientific domains could be particularly promising, as they offer rule-based environments where we can verify discoveries against empirical data. These systems could potentially build upon their own discoveries, using them as stepping stones to further innovation.
+Nevertheless, current AI systems, including foundation models, aren't truly open-ended. They're limited by their training data, unable to continuously generate genuinely novel insights. This is where the exciting gap lies, creating AI systems that can propose their own problems, explore without clear reward signals, and genuinely expand knowledge.
+Looking ahead, I'm think that open-endedness is crucial for truly creative AI. While current open-ended systems may not be sufficient, they point us in the right direction. Attempting to build creative systems without open-endedness would severely limit their capability.
 
-On the other hand, Art presents an even more difficult challenge. Unlike science, art is inherently open-ended, with perhaps only one rule: constantly questioning what art is. While human art evolves through complex cultural processes involving multiple perspectives and external influences, we might be able to simulate something similar in AI. Imagine multiple open-ended systems evaluating each other's artifacts and learning divergently through an evolutionary process, creating art in an "alien" way, where the human is no longer the subjective observer.
+One exciting direction might be combining evolutionary algorithms with multiple open-ended systems. Game-based or scientific domains could be particularly promising, as they offer rule-based environments where we can verify discoveries against empirical data. These systems could potentially build upon their own discoveries, using them as stepping stones to further innovation.
 
+This could be achieved, for example, by using reinforcement learning. The system would first learn the latent dynamics of its environment, abstracting its key features and developing the ability to take robust actions. Then, it could explore this latent space in a divergent way, generating novel and valuable insights by applying transformations to these latent representations, and evaluating the result focusing on novelty and interest. Finally, the system could propose new questions or problems to explore within the environment, driving learning and creative solutions. This could help to solve problems in rule-based domains in which the goal is to extract genuine new knowledge, not only remixing it.
 
+On the other hand, Art poses an even greater challenge. Art exemplifies what emerges of multiple open-ended systems interacting over an extended period of time and without a fixed goal in a shared environment. The artistic enviroment is not constrained to follow predictable empirical data but bounded only by what is computable within the human mind. Human art advances through a rich cultural evolution, influenced by diverse agents and external factors. It would be fascinating to simulate something similar in AI: imagine multiple open-ended systems evaluating each other’s creative outputs and learning divergently through an evolutionary process. This could lead to the creation of Art in an entirely "alien" way, where the human is no longer the subjective observer. Such an experiment could give us a deeper understanding of creativity and a perspective of Art as a real external observer.
 
-
-
-
-
-
-
-
-
-
-
+We stand at the intersection of human creativity and AI, we are witnessing an extraordinary moment of growth in this aspect. However, we need to be sure that we are optimizing in the correct direction, not a dead-end. While current AI systems may not fully replicate the divergent, open-ended thinking that characterizes human creative expression, we have not yet hit an unbreakable wall.
 
 
 ## References
