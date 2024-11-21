@@ -7,7 +7,6 @@ mathjax: true
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg/1920px-Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg" alt="aquelarre" style="max-width: 100%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;">Desolation</p>
 </div>
 
 *"Art is a mechanism that is always trying to destroy itself, always questioning what is or not is art"*
@@ -42,7 +41,6 @@ Transformational creativity, that involves fundamentally changing how we think a
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
   <img src="/assets/images/darth-vader.png" alt="darth-vader" style="max-width: 80%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;"></p>
 </div>
 
 Combinatorial creativity is often considered the most basic form of creativity. While some studies suggest that LLMs are primarily limited to this type of creativity, lacking the deeper exploratory or transformative capabilities found in other forms [8], we shouldn't undervalue the power of combining different concepts.
