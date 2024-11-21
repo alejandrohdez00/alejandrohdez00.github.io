@@ -39,6 +39,11 @@ Transformational creativity involves fundamentally changing how we think about s
 
 ## Don't underestimate the power of Combinatorial Creativity
 
+<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
+  <img src="https://lumiere-a.akamaihd.net/v1/images/5b3630dbcd17b900018b496c-image_afa2aaf8.jpeg?region=336%2C0%2C864%2C864" alt="darth-vader" style="max-width: 100%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;">Figure 1: As Darth Vader once said: Don't underestimate the power of the Dark Side of the Combinatorial Space</p>
+</div>
+
 Combinatorial creativity is often considered the most basic form of creativity. While some studies suggest that LLMs are primarily limited to this type of creativity, lacking the deeper exploratory or transformative capabilities found in other forms [8], we shouldn't undervalue the power of combining different concepts.
 
 In fact, the combination of concepts is a phenomenally powerful mechanism for creating wonderful things. Most of the creative works we love are, to a large degree, combinations of concepts we already know. Think about Star Wars for example. George Lucas created it by mixing westerns, samurai stories, feudal societies, and Flash Gordon, among other influences. Or consider Rapture, the charismatic city from Bioshock, it's basically a combination of a submarine city, art deco architecture, Ayn Rand's ultra-liberal capitalism, and a drug crisis. Usually, most of world building is done by composition.
@@ -63,13 +68,16 @@ Of course, we're making some assumptions here, like limiting our concept world t
 
 If you're interested, you can read the paper [here](https://arxiv.org/abs/2411.11494.) However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked. Our paper is merely a small step, a toy idea, compared to the progress that still lies ahead.
 
-<!add images!
+<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
+  <img src="/assets/images/insect2.png" alt="insect-image" style="max-width: 100%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;">Figure 3: A dragon insect with a skirt or an insect army commanded by an imperial official, combinations absent in our training dataset, but also cognitively unavailable to all artists on the domain.</p>
+</div>
 
 ## Creativity is Divergent
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
   <img src="https://nfgaleria.com/wp-content/uploads/2023/02/ultraleve_sala.jpg" alt="pipoart" style="max-width: 100%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;">Figure X: Ultraleve</p>
+  <p style="text-align: center; margin-top: 10px;">Figure 4: Ultraleve, Pipo Hernandez</p>
 </div>
 
 Now, let's dive into the tricky part: how creativity may work in practice, what is its essence.
@@ -139,6 +147,11 @@ Again, Borges' *Pierre Menard* captures this concept beautifully. Even an identi
 
 
 ## Are AI Models Already Creative?
+
+<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
+  <img src="/assets/images/dat-score.png" alt="insect-image" style="max-width: 100%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;">Figure 6: As DAT (measure of creativity) increases, the novelty and usefulness gains of using LLMs decreases</p>
+</div>
 
 Artificial Neural Networks excel at automatically representing and compressing data, effectively separating different patterns within it. While Schmidhuber's theory suggests AI models might already be creative, there's a crucial distinction to make: though they can effectively compress historical data, they lack two fundamental aspects of creativity, the ability to search for "interestingness" and the capacity to create artifacts that compress previously unseen and undetected regularities. What they actually do is compress existing data well, providing some generalization in lower dimensions based on the data's inherent behavior. However, they cannot search for and output novel insights about their environment or knowledge base. They lack a transformative approach to creativity.
 
