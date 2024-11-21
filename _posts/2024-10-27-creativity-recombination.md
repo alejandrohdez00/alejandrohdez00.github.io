@@ -56,7 +56,7 @@ In my Master's thesis, we explored this idea in the visual art domain. We hypoth
 
 Let me give you an example: the concept of an "airplane" simply didn't exist during the Renaissance period, making it cognitively unavailable to artists of that era. And even today, when we're familiar with both concepts, there's still this subtle bias against combining Renaissance style with airplanes (even if it could be a very cool idea). This relates to what cognitive scientists call availability bias - we heavily rely on immediate examples that come to mind when thinking about a topic, which can limit our exploration of novel ideas.
 
-Although trained across temporal and cultural boundaries, generative AI models inevitably absorb human biases. As a result, these models can expect to predominantly produce cultural artifacts that align with human cognitive availability. James Evans and his team showed that counteracting such a bias could be key to algorithmic augmented scientific discovery [5, 6].
+Although trained across temporal and cultural boundaries, generative AI models inevitably absorb human biases. As a result, these models can expect to predominantly produce cultural artifacts that align with human cognitive availability. James Evans and his team showed that counteracting such a bias could be key to algorithmic augmented scientific discovery [7, 8].
 
 We developed a system that generates novel visual art concept combinations by modeling and counteracting these cognitive biases. We worked with the set of concepts extracted from the artworks of WikiArt, and two probability distributions using fine-tuned LLM models. The first is what we call the Artwork-level distribution - *P(a\|S)*, which captures the probability of finding concept *A* in an artwork that contains a set of concepts *S*. The second is the Artist-level distribution - *Q(a\|S)*, representing the probability of an artist using concept *A* given they've used concepts *S* in their whole artistic work.
 
@@ -66,7 +66,7 @@ This leads us to discover combinations that are hard to find or conceive natural
 
 Of course, we're making some assumptions here, like limiting our concept world to those used in WikiArt artworks, and assuming artists express all their conceptual knowledge in their work (which might not be realistic, an artist might know about something but choose never to paint it). But it gives us a interesting approximation of cognitive availability and lets us explore these low density or empty spaces of artistic combinations that have never been attempted and hard to even conceive of in our world (dataset).
 
-If you're interested, you can read the paper [here](https://arxiv.org/abs/2411.11494.) However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked. Our paper is merely a small step, a toy idea, compared to the progress that still lies ahead.
+If you're interested, you can read the paper [here](https://arxiv.org/abs/2411.11494) However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked. Our paper is merely a small step, a toy idea, compared to the progress that still lies ahead.
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
   <img src="/assets/images/insect2.png" alt="insect-image" style="max-width: 100%; height: auto;">
@@ -98,7 +98,7 @@ That's where it began, with framing the problem. And then came the real magic, t
 
 This was the seed, the initial spark that started the posterior creative process. Like a butterfly effect in motion, this simple idea underwent a series of transformations and mutations, eventually evolving into the final piece that captured both the irony and the deeper truth about our relationship with art today.
 
-The brilliance of this approach shows exactly why machines struggle with creativity. While current AI can analyze patterns and mix pixels or words in statistically likely ways, it can't truly venture into out-of-distribution spaces without failing. My uncle's creative leap wasn't just about combining different time periods - it came from asking an unlikely question about his environment and current knowledge, then trying to answer. 
+The brilliance of this approach shows exactly why machines struggle with creativity. While current AI can analyze patterns and mix pixels or words in statistically likely ways, it can't truly venture into out-of-distribution spaces without failing. My uncle's creative leap wasn't just about combining different time periods, it came from asking an unlikely question about his environment and current knowledge, then trying to answer. 
 
 AI models excel at generating good responses, but they lack the ability to ask good questions that serve as stepping stones to greater insights. Divergent thinking doesn’t arise from gradient descent, which is designed to follow the steepest path to minimize a loss function. Instead, it is driven by curiosity, intentionally exploring unknown areas looking for something interesting. Where AI models see noise, human curiosity might find opportunity, a chance to discover novel and unexplored solutions rather than just optimize within known boundaries.
 
@@ -106,12 +106,12 @@ AI models excel at generating good responses, but they lack the ability to ask g
 
 However, we are computer scientists. We may have identified the essence of the creative process, asking interesting questions through a divergent process, but how can we translate this into a computational framework?
 
-I find particularly interesting Varshney work on defining creativity in a mathematical way. His framework establishes creativity as a formal optimization problem that balances novelty and quality in a combinatorial space. He shows that the fundamental tradeoff in creativity is similar to Shannon's capacity-cost function from communication theory, a connection we will explore further. While his research suggest that communicative intent may constrain both quality and novelty of creative artifacts due to information rate limitations, I believe the framework has an essential limitation: it takes a static global view of creativity. This is evident in how it treats quality as a fixed measure and assumes that novelty of the artifact should be measured against all the remaining artifacts in the domain. Then, the framework is overlooking the role of subjective observers, whose perspectives determine whether an artifact is perceived as novel or interesting, allowing for different creativity evaluations for the same artifact.
+I find particularly interesting Varshney work on defining creativity in a mathematical way [9]. His framework establishes creativity as a formal optimization problem that balances novelty and quality in a combinatorial space. He shows that the fundamental tradeoff in creativity is similar to Shannon's capacity-cost function from communication theory, a connection we will explore further. While his research suggest that communicative intent may constrain both quality and novelty of creative artifacts due to information rate limitations, I believe the framework has an essential limitation: it takes a static global view of creativity. This is evident in how it treats quality as a fixed measure and assumes that novelty of the artifact should be measured against all the remaining artifacts in the domain. Then, the framework is overlooking the role of subjective observers, whose perspectives determine whether an artifact is perceived as novel or interesting, allowing for different creativity evaluations for the same artifact.
 
-Now, let me introduce a curious [concept](https://arxiv.org/abs/0812.4360)[] from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about finding data compressions.
+Now, let me introduce a curious concept [10] from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about finding data compressions.
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvcG9sbG9ja19jb252ZXJnZW5jZS5qcGciLCJyZXNpemVDcm9wLDYwMCwzMDAsQ1JPUF9CQUxBTkNFIl19.zGBWtGDt4jOQczGQzG3ZwAqc7OWVBFO4lvfDopU6MO/0.jpg" alt="compression" style="max-width: 70%; height: auto;">
+  <img src="https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvcG9sbG9ja19jb252ZXJnZW5jZS5qcGciLCJyZXNpemVDcm9wLDYwMCwzMDAsQ1JPUF9CQUxBTkNFIl19.zGBWtGDt4jOQczGQzG3ZwAqc7OWVBFO4lvfDopU6MO/0.jpg" alt="compression" style="max-width: 100%; height: auto;">
   <p style="text-align: center; margin-top: 10px;">Figure 5: Convergence, Jackson Pollock</p>
 </div>
 
@@ -153,16 +153,24 @@ Again, Borges' *Pierre Menard* captures this concept beautifully. Even an identi
 
 ## Are AI Models Already Creative?
 
-<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="/assets/images/dat-score.png" alt="insect-image" style="max-width: 100%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;">Figure 6: As DAT (measure of creativity) increases, the novelty and usefulness gains of using LLMs decreases</p>
+<div style="display: flex; flex-direction: row; justify-content: space-between; margin: 20px 0;">
+  <div style="flex: 1; margin-right: 10px;">
+    <img src="/assets/images/dadaism_1.png" alt="compression" style="width: 70%; height: auto;">
+    <p style="text-align: center; margin-top: 10px;">Figure 6: Dadaism problem generated by Stable Diffusion</p>
+  </div>
+  <div style="flex: 1; margin-left: 10px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Marcel_Duchamp%2C_1917%2C_Fountain%2C_photograph_by_Alfred_Stieglitz.jpg" alt="compression" style="width: 100%; height: auto;">
+    <p style="text-align: center; margin-top: 10px;">Figure 7: The Fountain, Marcel Duchamp</p>
+  </div>
 </div>
+
+
 
 Artificial Neural Networks excel at automatically representing and compressing data, effectively separating different patterns within it. While Schmidhuber's theory suggests AI models might already be creative, there's a crucial distinction to make: though they can effectively compress historical data, they lack two fundamental aspects of creativity, the ability to search for "interestingness" and the capacity to create artifacts that compress previously unseen and undetected regularities. What they actually do is compress existing data well, providing some generalization in lower dimensions based on the data's inherent behavior. However, they cannot search for and output novel insights about their environment or knowledge base. They lack a transformative approach to creativity.
 
 Let me give you an example that I think really illustrates this point. Take text-to-image models like Stable Diffusion. They can take a description and create a probable image, but they're not able to handle questions as prompts and respond with truly novel, valuable images. In my experience, high-quality art and creativity rarely work like "I want to paint a dog, so I paint it." Instead, they often start with a question or an open-ended artistic intention. Here's one that was very trendy in its time: "Create a work of art whose purpose is to reject the logic, reason, and aestheticism of modern capitalist society and art."
 
-There are no predetermined rules for responding to this prompt. The real challenge lies in finding an effective way to portray (compress) this concept. As observed in Figure X, when given this prompt, Stable Diffusion typically outputs an amalgamation of common visual elements associated with words like "capitalist," "reason," "logic," or "reject." In contrast, Marcel Duchamp responded to this artistic intention (created by himself) with *Fountain*. Not a trivial response, but an extraordinarily effective (and compressed) one. Current AI models aren't designed to learn this kind of non-trivial, divergent reasoning. The question remains whether this limitation arises from the models' properties, the nature of the problem itself (probably it's not solvable through gradient descent), or simply that we're not training models on the right kind of data.
+There are no predetermined rules for responding to this prompt. The real challenge lies in finding an effective way to portray (compress) this concept. As observed in Figure 6, when given this prompt, Stable Diffusion typically outputs an amalgamation of common visual elements associated with words like "capitalist," "reason," "logic," or "reject." In contrast, Marcel Duchamp responded to this artistic intention (created by himself) with *Fountain*. Not a trivial response, but an extraordinarily effective (and compressed) one. Current AI models aren't designed to learn this kind of non-trivial, divergent reasoning. The question remains whether this limitation arises from the models' properties, the nature of the problem itself (probably it's not solvable through gradient descent), or simply that we're not training models on the right kind of data.
 
 Some work suggest that including information about artwork generation context could improve results by helping models learn to relate context and idea origination to images. An interesting experiment would be to collect a dataset pairing original artistic ideas with their resulting artworks, without including explicit information about what's in the artwork. Could an AI model learn these non-trivial transformations and functions? Could it generalize a function that takes a creative artistic problem and, without explicit guidance about what objects to portray, produce ingenious results (either as images or as text, imagining an LLM capable of designing a creative response and then crafting the prompt for its own text-to-image model)? While interesting, my intuition suggests this wouldn't work, primarily due to the fundamental nature of creativity. We might get surprising and interesting results, but we'd still be applying gradient descent to a task that may not be suitable for it.
 
@@ -175,6 +183,11 @@ A more interesting study involves participants asked to write a story that will 
 In short, if we define creativity as the ability to produce novel and valuable artifacts, AI models can be seen as creative by some set of subjective observers. However, their creativity is limited to specific, well-defined contexts (and to the subjective creative threshold of the observer). Unlike humans, who approach open-ended creative tasks through a divergent process, AI relies on convergent thinking. As we have seen, this heavily constrains their ability to create truly groundbreaking artifacts or discover entirely new regularities and knowledge. Divergent thinking is essential for innovation in environments without clear rules or objectives. In fact, studies suggest that AI can make human creative outputs more uniform, something that shouldn't happen if they were divergent thinkers instead of convergent.
 
 Regarding the Art domain, some artists, like Ted Chiang (the author of the beautiful *Story of Your Life*, which inspired the movie *Arrival*), argue that AI will never be an artist. Chiang claims that creating art involves making countless small, intentional decisions (every word chosen with purpose, every frame in a John Ford movie, every brushstroke in a painting). A system that generates probable outputs based on a brief prompt, he says, won't truly understand or grasp the nuances of artistic creation. While I agree with Chiang that art involves constantly taking fine, crucial decisions, I believe this doesn’t rule out the potential for future AI systems. From the perspective of creativity as compression, each decision is made to resonate with the audience, conveying more than just the combination of words or brushtrokes. I believe we can design AI systems capable of divergent thinking, producing creative artifacts, whether artistic or not.
+
+<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
+  <img src="/assets/images/dat-score.png" alt="insect-image" style="max-width: 100%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;">Figure 9: As DAT (measure of creativity) increases, the novelty and usefulness gains of using LLMs decreases</p>
+</div>
 
 ## Open-endedness
 
@@ -213,6 +226,14 @@ We stand at the intersection of human creativity and AI, we are witnessing an ex
 
 [8] Franceschelli, G., & Musolesi, M. (2023). On the creativity of large language models. arXiv preprint arXiv:2304.00008.
 
-[] Schmidhuber, J. (2008, June). Driven by compression progress: A simple principle explains essential aspects of subjective beauty, novelty, surprise, interestingness, attention, curiosity, creativity, art, science, music, jokes. In Workshop on anticipatory behavior in adaptive learning systems (pp. 48-76). Berlin, Heidelberg: Springer Berlin Heidelberg.
+[7] Feng Shi and James Evans. Surprising combinations of research contents and contexts are related
+to impact and emerge with scientific outsiders from distant disciplines. Nature Communications,
+14(1):1641, 2023
+
+[8] Jamshid Sourati and James A Evans. Accelerating science with human-aware artificial intelligence. Nature human behaviour, 7(10):1682–1696, 2023
+
+[9] Varshney, Lav R. "Limits Theorems for Creativity with Intentionality." ICCC. 2020.]
+
+[10] Schmidhuber, J. (2008, June). Driven by compression progress: A simple principle explains essential aspects of subjective beauty, novelty, surprise, interestingness, attention, curiosity, creativity, art, science, music, jokes. In Workshop on anticipatory behavior in adaptive learning systems (pp. 48-76). Berlin, Heidelberg: Springer Berlin Heidelberg.
 
 [] Dreyfus, H. L. (1972). What computers can’t do: The limits of artificial intelligence.
