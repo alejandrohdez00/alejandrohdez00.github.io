@@ -41,8 +41,8 @@ Transformational creativity, that involves fundamentally changing how we think a
 ## Don't underestimate the power of Combinatorial Creativity
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="https://lumiere-a.akamaihd.net/v1/images/5b3630dbcd17b900018b496c-image_afa2aaf8.jpeg?region=336%2C0%2C864%2C864" alt="darth-vader" style="max-width: 70%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;">Figure 1: As Darth Vader once said: Don't underestimate the power of the Dark Side of the Combinatorial Space</p>
+  <img src="/assets/images/darth-vader.png" alt="darth-vader" style="max-width: 80%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;"></p>
 </div>
 
 Combinatorial creativity is often considered the most basic form of creativity. While some studies suggest that LLMs are primarily limited to this type of creativity, lacking the deeper exploratory or transformative capabilities found in other forms [8], we shouldn't undervalue the power of combining different concepts.
@@ -150,6 +150,8 @@ The flip side is that if the observer is missing some part of the historical dat
 For example, I might not fully understand Romanticism history and thus cannot grasp my uncle's intended full message in the artwork. Yet, I might interpret the weighing scales in his artwork as black mirrors reflecting my act of artwork observation, extracting a unique message about my own subjective experience. This is why art has no dead ends, it has no fixed rules. Unlike science, the decompression process in Art can lead to entirely different and equally valid results.
 
 Again, Borges' *Pierre Menard* captures this concept beautifully. Even an identical text can produce entirely different interpretations depending on the observer's individual history and associations.
+
+## 
 
 
 ## Are AI Models Already Creative?
