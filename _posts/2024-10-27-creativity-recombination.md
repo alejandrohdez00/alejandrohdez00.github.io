@@ -30,11 +30,12 @@ Creativity is one of those concepts that seems to slip through our fingers just 
 In computer science, Margaret Boden's definition has been particularly influential [6]. She describes creativity as "the ability to come up with ideas or artifacts that are new, surprising, and valuable" [7]. What makes this definition so useful is how it breaks creativity into "measurable" components: value (high quality and social acceptance), novelty (significant difference from existing artifacts), and surprise (deviation from expectations).
 
 Boden identifies three distinct types of creativity:
-Combinatorial creativity involves creating unexpected combinations of familiar ideas, like pairing chocolate with chili in a recipe.
 
-Exploratory creativity is about finding new solutions within established frameworks, like a jazz musician discovering fresh melodies while working within traditional chord progressions.
+Combinatorial creativity, that involves creating unexpected combinations of familiar ideas, like pairing chocolate with chili in a recipe.
 
-Transformational creativity involves fundamentally changing how we think about something. Think of Einstein's theory of relativity revolutionizing our understanding of space and time, or how Picasso's cubist paintings transformed 20th-century artistic expression.
+Exploratory creativity, finding new solutions within established frameworks, like a jazz musician discovering fresh melodies while working within traditional chord progressions.
+
+Transformational creativity, that involves fundamentally changing how we think about something. Think of Einstein's theory of relativity revolutionizing our understanding of space and time, or how Picasso's cubist paintings transformed 20th-century artistic expression.
 
 
 ## Don't underestimate the power of Combinatorial Creativity
