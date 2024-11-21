@@ -6,8 +6,8 @@ mathjax: true
 
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/GOYA_-_El_aquelarre_%28Museo_L%C3%A1zaro_Galdiano%2C_Madrid%2C_1797-98%29.jpg/1200px-GOYA_-_El_aquelarre_%28Museo_L%C3%A1zaro_Galdiano%2C_Madrid%2C_1797-98%29.jpg" alt="aquelarre" style="max-width: 100%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;"></p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg/1920px-Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg" alt="aquelarre" style="max-width: 100%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;">Desolation</p>
 </div>
 
 *"Art is a mechanism that is always trying to destroy itself, always questioning what is or not is art"*
