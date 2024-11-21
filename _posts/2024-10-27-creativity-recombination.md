@@ -151,18 +151,48 @@ For example, I might not fully understand Romanticism history and thus cannot gr
 
 Again, Borges' *Pierre Menard* captures this concept beautifully. Even an identical text can produce entirely different interpretations depending on the observer's individual history and associations.
 
-## 
+## Thoughts on Art as Compression
 
+<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
+  <img src="https://d7hftxdivxxvm.cloudfront.net/?height=632&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FAVjxLlGSYPD9AAuno1tjmw%2Flarge.jpg&width=640
+  " alt="black-square" style="max-width: 100%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;">Figure 6: Black Square, Kazimir Malevich</p>
+</div>
+
+
+As much as I enjoy computationally-focused philosophical theories, and as much as I admire the beauty (or perhaps the amount of compressed bits) of Schmidhuber's framework, I was born into a family of artists and have been surrounded by art creation my entire life. I exist in two worlds: my computer scientist side is fascinated by the idea of creativity being fully computational and replicable by machines, and I am passionate about advancing this research. Yet, another part of me wants to believe there is still something deeper to discover—that creativity cannot be reduced to something so straightforward.
+
+Sometimes, I see both perspectives as equally beautiful. On one hand, there is the promise of a future where AIs create art and share information in innovative ways that we can admire. On the other, I fear that the intimate human connection, our ability to communicate our fears, joys, and sorrows through art, might be lost, overshadowed by the relentless speed and abundance of machine-generated creations.
+
+Now, let’s explore what might be missing from this perspective.
+
+In computer science, we are increasingly used to explaining the universe in terms of computation and information transmission. Don’t get me wrong, I enjoy this kind of thinking, it's very elegant and rewarding. However, we must recognize that a recurring pattern throughout Western intellectual history is the tendency to interpret the universe and the human mind using the most advanced technological paradigm of the time [12]. For example, in ancient Greece, the mind was compared to a hydraulic clock; during the fourteenth to nineteenth centuries, it was likened to a clockwork mechanism. With the industrial revolution, the metaphor shifted to steam engines, and since the 1930s, the dominant analogy has been the human mind as a computer.
+
+As subjective observers having historical data and context, we try to understand the world in the most advanced terms we can. However, we need to be careful about information we might be losing by constraining the empirical data in our information theories.
+
+I find Jürgen Schmidhuber's theory very elegant. It works well for explaining creativity in science, which is essentially about finding a reduced explanation of the phenomena around us, that follows a set of rules. However, I think Art is a much more complex space, especially after the 20th century, when the meta-game became about breaking its own rules.
+
+We could dedicate an entire blog to exploring why art works: its ability to evoke emotions, encode meaning, and express concepts beyond mere beauty. But here, we’ll focus on a single, amusing counterexample.
+
+Black Square by Kazimir Malevich is a famous painting that, as its name suggests, is a simple black square. Despite its apparent simplicity, its debut caused an uproar, as it started a radical departure from established artistic norms. However, the depth of conceptual "compression" in this piece is huge. It encodes debates about the rules of art, the essence of artistic expression, the nature of the universe, and even the self. Malevich considered the square the purest and most basic form of art, stripping away unnecessary elements to focus on emotions, philosophical ideas, and abstract concepts rather than literal depictions. By this definition, and assuming the observer is aware of some of its meanings, Black Square could arguably be one of the most beautiful paintings ever created, given how much information it compresses into its minimalist form.
+
+Now, let’s explore the other extreme. Imagine a painting on a wall that is 50 cm wide but infinitely tall. This artwork is made up of completely random dots of color with no discernible pattern. The artist's sole intent is to create a piece that cannot be compressed. One might argue that a subjective observer could still derive meaning, seeing it as a reflection on the nature of art, the universe, or the opposition of randomness to compression. But even if we assume that human cognition could extract infinite meaning from this painting (something computationally hard), encoding the artwork would require an infinite number of bits. According to Schmidhuber's theory, which associates beauty with the amount of compressibility, this painting should not be beautiful.
+
+Yet, as a subjective observer, and I’m certain many others would agree, this painting could be perceived as beautiful, precisely because it elegantly highlights the tension between randomness and compression, among other topics. Then, this example indicates that beauty and human emotion might not be strictly bounded to compressibility.
+
+Art is complex. It started by painting animals in caves. Now, free from rigid rules or the obligation to mimic reality, has become an entity exceedingly difficult to describe computationally. It inherently turns any theoretical framework against itself, challenging attempts at definitive explanation.
+
+As a computer scientist working on artificial creativity, such an elusive domain is both a nightmare and an infinite source of fun and joy. As Edward Frenkel encourages, I will keep working on my science, open to paradoxes, because they often lead to new knowledge.
 
 ## Are AI Models Already Creative?
 
 <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin: 20px 0;">
   <div style="flex: 1; margin-right: 10px; display: flex; flex-direction: column; align-items: center;">
-    <img src="/assets/images/dadaism_1.png" alt="compression" style="width: 100%; height: 300px; object-fit: contain;">
+    <img src="/assets/images/dadaism_1.png" alt="dadaism" style="width: 100%; height: 300px; object-fit: contain;">
     <p style="text-align: center; margin-top: 10px;">Figure 6: Dadaism problem generated by Stable Diffusion</p>
   </div>
   <div style="flex: 1; margin-left: 10px; display: flex; flex-direction: column; align-items: center;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Marcel_Duchamp%2C_1917%2C_Fountain%2C_photograph_by_Alfred_Stieglitz.jpg" alt="compression" style="width: 100%; height: 300px; object-fit: contain;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Marcel_Duchamp%2C_1917%2C_Fountain%2C_photograph_by_Alfred_Stieglitz.jpg" alt="fountain" style="width: 100%; height: 300px; object-fit: contain;">
     <p style="text-align: center; margin-top: 10px;">Figure 7: The Fountain, Marcel Duchamp</p>
   </div>
 </div>
@@ -177,9 +207,9 @@ Some work suggest that including information about artwork generation context co
 
 When it comes to LLMs, the challenges are similar, though I'm more optimistic about their future. Having been trained on so much human experience, they're remarkably good at aligning with human interests. I could see them potentially directing the search for interestingness in other exploratory agents, something more sophisticated than what we explored in our combinatorial creativity paper, where we used LLM-learned probabilities to search over the space of unexplored artistic concept combinations.
 
-I often hear people claim that increasing an LLM's temperature parameter makes it more creative, but I think this misunderstands both creativity and what temperature actually does. Raising the temperature just flattens the distribution of tokens in the output layer, increasing the variance of the results. But that's not how creativity works, and research has shown it barely affects the novelty of outputs in creative tasks like story writing [12].
+I often hear people claim that increasing an LLM's temperature parameter makes it more creative, but I think this misunderstands both creativity and what temperature actually does. Raising the temperature just flattens the distribution of tokens in the output layer, increasing the variance of the results. But that's not how creativity works, and research has shown it barely affects the novelty of outputs in creative tasks like story writing [13].
 
-A more interesting study involves participants asked to write a story that will be evaluated by humans [13]. Some participants are allowed to use a large language model (LLM) to help, while others are not. Prior to the experiment, participants took a creativity test. The findings show that access to generative AI results in stories being rated as more creative, better written, and more enjoyable, particularly among less creative writers. However, AI-assisted stories are more similar to each other than human-written stories, and highly creative individuals saw little improvement when using LLMs. I would also have included the results of the creativity test for the evaluators. My intuition is that people who believe LLMs are highly creative might not be very creative themselves or may not be used to highly creative environments.
+A more interesting study involves participants asked to write a story that will be evaluated by humans [14]. Some participants are allowed to use a large language model (LLM) to help, while others are not. Prior to the experiment, participants took a creativity test. The findings show that access to generative AI results in stories being rated as more creative, better written, and more enjoyable, particularly among less creative writers. However, AI-assisted stories are more similar to each other than human-written stories, and highly creative individuals saw little improvement when using LLMs. I would also have included the results of the creativity test for the evaluators. My intuition is that people who believe LLMs are highly creative might not be very creative themselves or may not be used to highly creative environments.
 
 In short, if we define creativity as the ability to produce novel and valuable artifacts, AI models can be seen as creative by some set of subjective observers. However, their creativity is limited to specific, well-defined contexts (and to the subjective creative threshold of the observer). Unlike humans, who approach open-ended creative tasks through a divergent process, AI relies on convergent thinking. As we have seen, this heavily constrains their ability to create truly groundbreaking artifacts or discover entirely new regularities and knowledge, leading to outputs proper to transformational creativity. Divergent thinking is essential for innovation in environments without clear rules or objectives. In fact, studies suggest that AI can make human creative outputs more uniform, something that shouldn't happen if they were divergent thinkers instead of convergent.
 
@@ -194,7 +224,7 @@ Regarding the Art domain, some artists, like Ted Chiang (the author of the beaut
 
 Life is inherently open-ended. As humans evolved from mere survival to beings of higher reasoning, we became detached from our primal goals, leaving us without a clear, definitive purpose. Similarly, Art has an open-ended nature. It began as a way to leave a mark on the world and communicate a message but has transformed through cultural evolution into an ever-shifting and elusive domain. Once, we painted what we saw; then, we painted gods. When gods fell, we painted ourselves, and later, when there was anything left we started breaking the very rules we created. Currently, Art follows one guiding principle: to perpetually destroy itself, always questioning what it is, or isn’t.
 
-The concept of open-endedness, pioneered by Kenneth Stanley among others (earlier Schmidhuber's approaches, while not defined exactly in this way, are closely related to this concept), and further defined in [14], feels fundamental to me. It's defined as the ability to continuously generate novel and learnable artifacts or behaviors that are unpredictable yet meaningful to an observer. This definition shares parallels with compression progress theory, particularly in how it values novelty and learnability. If something is too predictable, it's boring (low learnability). But if it's completely unpredictable, it becomes impossible to learn from, it's also boring.
+The concept of open-endedness, pioneered by Kenneth Stanley among others (earlier Schmidhuber's approaches, while not defined exactly in this way, are closely related to this concept), and further defined in [15], feels fundamental to me. It's defined as the ability to continuously generate novel and learnable artifacts or behaviors that are unpredictable yet meaningful to an observer. This definition shares parallels with compression progress theory, particularly in how it values novelty and learnability. If something is too predictable, it's boring (low learnability). But if it's completely unpredictable, it becomes impossible to learn from, it's also boring.
 
 Take AlphaGo as an example of a simple open-ended system. Throughout its training, it developed policies that were genuinely novel to human experts, making moves that professional players would consider highly improbable, yet proved effective. Moreover, it has been shown that human players could actually improve their game by studying and learning from AlphaGo's unexpected strategies.
 
@@ -207,7 +237,7 @@ If we could rerun human evolution, would we arrive at the same scientific and cu
 
 One way to make this happen is by using reinforcement learning. The system would start by learning the core dynamics of its environment, understanding the key features, and figuring out how to take effective actions. After that, it could explore this space in a more open-ended way, coming up with fresh and valuable insights by tweaking these representations and checking the results for novelty and interest. Finally, the system could suggest new questions or challenges to tackle, driving both learning and creative problem-solving. This approach could be really helpful for solving problems in rule-based areas where the goal is to discover new knowledge, not just remix what’s already known.
 
-On the other hand, feedback environments are essential in open-ended fields like science and art. Agents could engage in a feedback loop, creating artifacts that are evaluated by their peers, learning from the process. This approach could mimic the evolution of culture and knowledge, driving continuous exploration and innovation in creative disciplines. It could leverage the speed difference between artificial simulations and human evolution to explore alternative paths of cultural or general knowledge development. This process could lead to more "alien" knowledge discoveries, insights that are highly unlikely for humans to uncover due to cognitive biases like temporal, geographical, social, or computational constraints, as we discussed earlier. A notable example of such a discovery is AlphaTensor's achievement in finding new matrix multiplication algorithms, discoveries that are improbable for humans due to the vast complexity of the solution space [15].
+On the other hand, feedback environments are essential in open-ended fields like science and art. Agents could engage in a feedback loop, creating artifacts that are evaluated by their peers, learning from the process. This approach could mimic the evolution of culture and knowledge, driving continuous exploration and innovation in creative disciplines. It could leverage the speed difference between artificial simulations and human evolution to explore alternative paths of cultural or general knowledge development. This process could lead to more "alien" knowledge discoveries, insights that are highly unlikely for humans to uncover due to cognitive biases like temporal, geographical, social, or computational constraints, as we discussed earlier. A notable example of such a discovery is AlphaTensor's achievement in finding new matrix multiplication algorithms, discoveries that are improbable for humans due to the vast complexity of the solution space [16].
 
 Art poses an even greater challenge. Art exemplifies what emerges of multiple open-ended systems interacting over an extended period of time and without a fixed goal in a shared environment. The artistic enviroment is not constrained to follow predictable empirical data but bounded only by what is computable within the human mind. Human art advances through a rich cultural evolution, influenced by diverse agents and external factors. It would be fascinating to simulate something similar in AI: imagine multiple open-ended systems evaluating each other’s creative outputs and learning divergently through an evolutionary process. This could lead to the creation of Art in an entirely "alien" way, where the human is no longer the subjective observer. Such an experiment could give us a deeper understanding of creativity and a perspective of Art as a real external observer.
 
@@ -242,12 +272,14 @@ to impact and emerge with scientific outsiders from distant disciplines. Nature 
 
 [10] Schmidhuber, J. (2008, June). Driven by compression progress: A simple principle explains essential aspects of subjective beauty, novelty, surprise, interestingness, attention, curiosity, creativity, art, science, music, jokes. In Workshop on anticipatory behavior in adaptive learning systems (pp. 48-76). Berlin, Heidelberg: Springer Berlin Heidelberg.
 
-[11] Wang, Haonan, et al. "Can AI be as creative as humans?." arXiv preprint arXiv:2401.01623 (2024).
+[11] Dreyfus, H. L. (1972). What computers can’t do: The limits of artificial intelligence.
 
-[12] Peeperkorn, Max, et al. "Is temperature the creativity parameter of large language models?." arXiv preprint arXiv:2405.00492 (2024).
+[12] Wang, Haonan, et al. "Can AI be as creative as humans?." arXiv preprint arXiv:2401.01623 (2024).
 
-[13] Doshi, A. R., & Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. Science Advances, 10(28), eadn5290.
+[13] Peeperkorn, Max, et al. "Is temperature the creativity parameter of large language models?." arXiv preprint arXiv:2405.00492 (2024).
 
-[14] Hughes, Edward, et al. "Open-Endedness is Essential for Artificial Superhuman Intelligence." arXiv preprint arXiv:2406.04268 (2024).
+[14] Doshi, A. R., & Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. Science Advances, 10(28), eadn5290.
 
-[15] Fawzi, A., Balog, M., Huang, A., Hubert, T., Romera-Paredes, B., Barekatain, M., ... & Kohli, P.(2022). Discovering faster matrix multiplication algorithms with reinforcement learning. Nature, 610(7930), 47-53.
+[15] Hughes, Edward, et al. "Open-Endedness is Essential for Artificial Superhuman Intelligence." arXiv preprint arXiv:2406.04268 (2024).
+
+[16] Fawzi, A., Balog, M., Huang, A., Hubert, T., Romera-Paredes, B., Barekatain, M., ... & Kohli, P.(2022). Discovering faster matrix multiplication algorithms with reinforcement learning. Nature, 610(7930), 47-53.
