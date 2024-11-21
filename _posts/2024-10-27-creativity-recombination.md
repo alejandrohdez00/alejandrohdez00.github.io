@@ -1,5 +1,5 @@
 ---
-title: "Philosophical thoughts about Creativity and AI"
+title: "Theories about Creativity and AI"
 date: 2024-10-27
 mathjax: true
 ---
@@ -40,7 +40,7 @@ Transformational creativity involves fundamentally changing how we think about s
 ## Don't underestimate the power of Combinatorial Creativity
 
 <div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="https://lumiere-a.akamaihd.net/v1/images/5b3630dbcd17b900018b496c-image_afa2aaf8.jpeg?region=336%2C0%2C864%2C864" alt="darth-vader" style="max-width: 100%; height: auto;">
+  <img src="https://lumiere-a.akamaihd.net/v1/images/5b3630dbcd17b900018b496c-image_afa2aaf8.jpeg?region=336%2C0%2C864%2C864" alt="darth-vader" style="max-width: 70%; height: auto;">
   <p style="text-align: center; margin-top: 10px;">Figure 1: As Darth Vader once said: Don't underestimate the power of the Dark Side of the Combinatorial Space</p>
 </div>
 
@@ -84,7 +84,7 @@ Now, let's dive into the tricky part: how creativity may work in practice, what 
 
 This led to an interesting conversation with my uncle about making an AI artist. I suggested that understanding creativity in computational terms, or at least having a nuanced definition that can be approximated by a program, could help to achieve this, if possible. Therefore, I asked him to recall how he came up with the idea for his latest artwork, which was exhibited at ARCO, Spain's International Contemporary Art Fair.
 
-Explaining this artistic piece goes against its essence, but trust me, we could discuss its intricacies for hours. Still, I’ll try to focus on the main point. As you can see in Figure X, the piece consists of a wall displaying Romanticism paintings with black weighing scales on the floor. The mere presence of Romantic paintings in a Contemporary Art fair is already surprising, but the piece explores current dialogue mechanism between artwork and spectator.
+Explaining this artistic piece goes against its essence, but trust me, we could discuss its intricacies for hours. Still, I’ll try to focus on the main point. As you can see in Figure 4, the piece consists of a wall displaying Romanticism paintings with black weighing scales on the floor. The mere presence of Romantic paintings in a Contemporary Art fair is already surprising, but the piece explores current dialogue mechanism between artwork and spectator.
 
 In our current era, when confronted with art we don't immediately understand, we often demand quick explanations. We've lost our patience for mystery, for engaging in slow but intense dialogue with an artwork, for dealing with ambiguity. Conditioned by fast internet and instant information, we expect immediate answers from art. However, art often transmits questions rather than answers, usually philosophical questions without clear solutions.
 
@@ -108,7 +108,12 @@ However, we are computer scientists. We may have identified the essence of the c
 
 I find particularly interesting Varshney work on defining creativity in a mathematical way. His framework establishes creativity as a formal optimization problem that balances novelty and quality in a combinatorial space. He shows that the fundamental tradeoff in creativity is similar to Shannon's capacity-cost function from communication theory, a connection we will explore further. While his research suggest that communicative intent may constrain both quality and novelty of creative artifacts due to information rate limitations, I believe the framework has an essential limitation: it takes a static global view of creativity. This is evident in how it treats quality as a fixed measure and assumes that novelty of the artifact should be measured against all the remaining artifacts in the domain. Then, the framework is overlooking the role of subjective observers, whose perspectives determine whether an artifact is perceived as novel or interesting, allowing for different creativity evaluations for the same artifact.
 
-Now, let me introduce a curious [concept](https://arxiv.org/abs/0812.4360)[] from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about finding data compressions. 
+Now, let me introduce a curious [concept](https://arxiv.org/abs/0812.4360)[] from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about finding data compressions.
+
+<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
+  <img src="https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvcG9sbG9ja19jb252ZXJnZW5jZS5qcGciLCJyZXNpemVDcm9wLDYwMCwzMDAsQ1JPUF9CQUxBTkNFIl19.zGBWtGDt4jOQczGQzG3ZwAqc7OWVBFO4lvfDopU6MO/0.jpg" alt="compression" style="max-width: 70%; height: auto;">
+  <p style="text-align: center; margin-top: 10px;">Figure 5: Convergence, Jackson Pollock</p>
+</div>
 
 We live in an environment full of historical data: our entire record of actions, observations, experiences and reward signals. Simple explanations of the past often reflect some repetitive patterns, which are useful for predicting the future. Therefore, any intelligent system aiming to achieve future goals should be driven to compress its sensory history. To achieve this, we identify regularities and create compact internal representations or symbols for frequently recurring elements. Even when predictions aren't perfect, we can still compress data effectively by using shorter codes for events that occur with very high probability. For example, since the sun rises every day, it’s efficient to create a symbol like "daylight" to represent this recurring event, rather than continuously storing raw sensory data about each sunrise. 
 
