@@ -9,7 +9,7 @@ mathjax: true
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg/1920px-Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg" alt="aquelarre" style="max-width: 100%; height: auto;">
 </div>
 
-*"Art is a mechanism that is always trying to destroy itself, always questioning what is or not is art"*
+*"Art is a mechanism constantly trying to destroy itself, always questioning what is or isn’t art."*
 
 
 Those were the words my uncle, the artist Pipo Hernandez, shared with me over dinner at his house while we discussed whether AI could truly be an artist. (If you're curious about his work, you can check it out [here](https://nfgaleria.com/artista/pipo-hernandez-rivero/), I absolutely love it!)
