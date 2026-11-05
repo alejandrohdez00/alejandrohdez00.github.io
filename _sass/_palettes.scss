@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Palettes. Each defines the same tokens for light (default) and dark.
+   Pick the site default with `palette:` in _config.yml.
+
+   Token roles
+     --bg / --bg-2 / --surface     page, alternate band, cards
+     --ink / --ink-soft / --muted  text levels
+     --line                        hairlines
+     --accent (+hover, tint, on)   links, buttons, active nav
+     --c2                          news & timeline dates (text-safe)
+     --c3 / --c3-tint              venue pills
+     --badge / --badge-tint        "Oral / Award" badges
+     --marker                      highlighter behind key phrases
+     --glow-1..3                   decorative gradients (hero glow, photo ring)
+     --duo                         photo highlight tint (duotone)
+   ========================================================================== */
+
+/* ---- Klein: ultramarine, saffron & lilac on warm paper ---- */
+:root, :root[data-palette="klein"] {
+  --bg: #f4f2ec;  --bg-2: #ece9e0;  --surface: #fffdf8;
+  --ink: #15172e; --ink-soft: #33364f; --muted: #63667c; --line: #dcd8cc;
+  --accent: #2a3fd1; --accent-hover: #1e2fa8; --accent-tint: #e4e6fb; --on-accent: #ffffff;
+  --c2: #9a5800;
+  --c3: #4a3bb0; --c3-tint: #ebe7fb;
+  --badge: #b8392a; --badge-tint: #fbe4dd;
+  --marker: #fbe1a0;
+  --glow-1: #3d55ff; --glow-2: #ffb84d; --glow-3: #b9a8ff;
+  --duo: #f7dfa3;
+}
+:root[data-theme="dark"], :root[data-palette="klein"][data-theme="dark"] {
+  --bg: #0d0f24;  --bg-2: #11142d;  --surface: #161a36;
+  --ink: #ecebf5; --ink-soft: #c9c9dc; --muted: #9597b3; --line: #272b4b;
+  --accent: #8c9dff; --accent-hover: #b0bcff; --accent-tint: #1d2352; --on-accent: #0d0f24;
+  --c2: #f2b64f;
+  --c3: #c3b8ff; --c3-tint: #251f4c;
+  --badge: #ff9a85; --badge-tint: #3a1f1c;
+  --marker: #4a3a14;
+  --glow-1: #2a3fd1; --glow-2: #b07400; --glow-3: #6b55d9;
+  --duo: #c9cfff;
+}
+
+/* ---- Aurora: violet, aqua & orchid on lavender white ---- */
+:root[data-palette="aurora"] {
+  --bg: #f8f7fc;  --bg-2: #efedf8;  --surface: #ffffff;
+  --ink: #1b1630; --ink-soft: #3a3452; --muted: #6a6483; --line: #e2dff0;
+  --accent: #5b3fd1; --accent-hover: #4630a8; --accent-tint: #ece8fc; --on-accent: #ffffff;
+  --c2: #0d7a73;
+  --c3: #b0306c; --c3-tint: #fce6f0;
+  --badge: #b0306c; --badge-tint: #fce6f0;
+  --marker: #c8f1ea;
+  --glow-1: #8b6cff; --glow-2: #2ad4c4; --glow-3: #ff7eb6;
+  --duo: #e4dcff;
+}
+:root[data-palette="aurora"][data-theme="dark"] {
+  --bg: #0f0c1d;  --bg-2: #141026;  --surface: #1a1630;
+  --ink: #eeeaf8; --ink-soft: #cdc7e2; --muted: #9a93b5; --line: #2b2546;
+  --accent: #a996ff; --accent-hover: #c6b9ff; --accent-tint: #251e47; --on-accent: #0f0c1d;
+  --c2: #5fe0d2;
+  --c3: #ff9cc8; --c3-tint: #3a1c33;
+  --badge: #ff9cc8; --badge-tint: #3a1c33;
+  --marker: #1f4a46;
+  --glow-1: #5b3fd1; --glow-2: #0f8a83; --glow-3: #b0306c;
+  --duo: #d7cbff;
+}
+
+/* ---- Biblioteca: bottle green, oxblood & gold on parchment ---- */
+:root[data-palette="biblioteca"] {
+  --bg: #f3ede1;  --bg-2: #eae2d2;  --surface: #fbf8f1;
+  --ink: #1f1b15; --ink-soft: #3d372d; --muted: #6b6253; --line: #ddd3c0;
+  --accent: #1f5a43; --accent-hover: #164433; --accent-tint: #e0eadf; --on-accent: #fbf8f1;
+  --c2: #8e2f3a;
+  --c3: #6e510f; --c3-tint: #f2e5c3;
+  --badge: #8e2f3a; --badge-tint: #f5dfdf;
+  --marker: #f0dc9f;
+  --glow-1: #2f7a5b; --glow-2: #d4a63a; --glow-3: #a8434f;
+  --duo: #f1e2bd;
+}
+:root[data-palette="biblioteca"][data-theme="dark"] {
+  --bg: #14130f;  --bg-2: #191712;  --surface: #1f1d17;
+  --ink: #efe8da; --ink-soft: #d3cab8; --muted: #a0967f; --line: #332f26;
+  --accent: #8fc9a9; --accent-hover: #b1dcc3; --accent-tint: #1e2d25; --on-accent: #14130f;
+  --c2: #e79aa3;
+  --c3: #e6c46f; --c3-tint: #332a14;
+  --badge: #f0a2aa; --badge-tint: #3a1e22;
+  --marker: #4a3c14;
+  --glow-1: #1f5a43; --glow-2: #8a6a1a; --glow-3: #6e2630;
+  --duo: #efe2c0;
+}
+
+/* ---- Atlántico: deep ocean, terracotta & sage on sand ---- */
+:root[data-palette="atlantico"] {
+  --bg: #f6f1e8;  --bg-2: #ede5d6;  --surface: #fffcf6;
+  --ink: #10202b; --ink-soft: #2d3d48; --muted: #57646c; --line: #e0d6c4;
+  --accent: #0b5a78; --accent-hover: #084660; --accent-tint: #dcecf1; --on-accent: #ffffff;
+  --c2: #a8432c;
+  --c3: #44614a; --c3-tint: #e1ebdf;
+  --badge: #a8432c; --badge-tint: #f8e0d7;
+  --marker: #f7d5c6;
+  --glow-1: #1a8bb0; --glow-2: #e2774f; --glow-3: #8fb596;
+  --duo: #f4dccd;
+}
+:root[data-palette="atlantico"][data-theme="dark"] {
+  --bg: #0a171f;  --bg-2: #0d1d27;  --surface: #12242f;
+  --ink: #ece6da; --ink-soft: #ccd3d6; --muted: #91a0a8; --line: #213641;
+  --accent: #6fc3df; --accent-hover: #9ad6ea; --accent-tint: #12303d; --on-accent: #0a171f;
+  --c2: #f29a7f;
+  --c3: #a9c9ad; --c3-tint: #1c2e22;
+  --badge: #f29a7f; --badge-tint: #3a221b;
+  --marker: #4a2a20;
+  --glow-1: #0b5a78; --glow-2: #a5452c; --glow-3: #4d6b52;
+  --duo: #cde7f0;
+}

@@ -5,11 +5,15 @@ title: "Alejandro Hernandez Artiles"
 {%- assign news_limit = 6 -%}
 
 <section class="hero">
-  <img class="hero-photo" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Portrait of Alejandro Hernandez Artiles" width="480" height="480">
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-duo">
+      <img class="hero-photo" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Portrait of Alejandro Hernandez Artiles" width="480" height="480">
+    </div>
+  </div>
   <div class="hero-text">
-    <h1 class="hero-name">Alejandro Hernandez Artiles</h1>
+    <p class="hero-kicker"><a href="https://ellis.eu" style="color: inherit; text-decoration: none">ELLIS</a> PhD Student · Berlin</p>
+    <h1 class="hero-name">Alejandro <em>Hernandez Artiles</em></h1>
     <p class="hero-role">
-      <a href="https://ellis.eu">ELLIS</a> PhD Student<br>
       <a href="https://www.mpib-berlin.mpg.de/en">MPI for Human Development</a> ·
       <a href="https://is.mpg.de">MPI for Intelligent Systems</a>
     </p>
@@ -17,9 +21,10 @@ title: "Alejandro Hernandez Artiles"
       Advised by <a href="https://www.mpib-berlin.mpg.de/staff/iyad-rahwan">Iyad Rahwan</a>
       &amp; <a href="https://is.mpg.de/person/bs">Bernhard Schölkopf</a>
     </p>
-    <p class="hero-tagline">Open-ended AI for cultural and scientific discovery.</p>
   </div>
 </section>
+
+<p class="tagline">I study how ideas evolve, and build <em>open-ended AI</em> that keeps discovering original ones, in art and in science.</p>
 
 {% include contact.html %}
 
@@ -27,11 +32,11 @@ title: "Alejandro Hernandez Artiles"
   <h2 class="section-title">About</h2>
   <p>Hi! I’m <strong>Alejandro</strong>, an ELLIS PhD student at the Max Planck Institute for Human Development and the Max Planck Institute for Intelligent Systems, co-supervised by Iyad Rahwan and Bernhard Schölkopf.</p>
 
-  <p>I believe science and art are evolutionary processes, where ideas are mutated, shared and selected over time by a population of agents. My research therefore explores <strong>open-ended AI for cultural and scientific discovery</strong>. Inspired by cultural evolution, I develop methods that help AI systems continually explore original, coherent ideas in domains without clear reward signals, such as early-stage scientific ideation.</p>
+  <p>I believe science and art are evolutionary processes, where ideas are mutated, shared and selected over time by a population of agents. My research therefore explores <mark>open-ended AI for cultural and scientific discovery</mark>. Inspired by cultural evolution, I develop methods that help AI systems continually explore original, coherent ideas in domains without clear reward signals, such as early-stage scientific ideation.</p>
 
   <p>Outside research, I enjoy creative writing, literature, cinema, video games and opera.</p>
 
-  <p class="callout">I’m always happy to chat about open-endedness, creativity, or a good Borges story. Feel free to <a href="mailto:{{ site.email }}">send me an email</a>!</p>
+  <div class="callout"><p>I’m always happy to chat about open-endedness, creativity, or a good Borges story. Feel free to <a href="mailto:{{ site.email }}">send me an email</a>!</p></div>
 </section>
 
 <section class="section">

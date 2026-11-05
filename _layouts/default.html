@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-palette="{{ site.palette | default: 'klein' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
     /* Light is the default; dark only if the visitor chose it. Runs before paint. */
-    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+    try {
+      var r = document.documentElement;
+      if (localStorage.getItem('theme') === 'dark') r.dataset.theme = 'dark';
+      {% if site.palette_picker %}var p = localStorage.getItem('palette'); if (p) r.dataset.palette = p;{% endif %}
+    } catch (e) {}
   </script>
   {% seo %}
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
@@ -21,6 +25,8 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="glow" aria-hidden="true"><span></span><span></span><span></span></div>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -46,26 +52,56 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <div class="footer-name">Alejandro Hernandez Artiles</div>
+    <div class="container">
+      <div class="footer-cta">
+        <p class="footer-kicker">Get in touch</p>
+        <p class="footer-headline">Ideas are better <em>shared</em>. Say hello!</p>
+        <a class="footer-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+      <div class="footer-inner">
         <div class="footer-meta">
-          {% include icon.html name="pin" %} Berlin, Germany ·
-          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          {% include icon.html name="pin" %} Berlin, Germany · © {{ site.time | date: "%Y" }} Alejandro Hernandez Artiles
+        </div>
+        <div class="footer-links">
+          {%- for link in site.contact -%}
+            {%- if link.url != "" -%}
+            <a href="{{ link.url }}" aria-label="{{ link.title }}" title="{{ link.title }}">{% include icon.html name=link.icon %}</a>
+            {%- endif -%}
+          {%- endfor -%}
         </div>
       </div>
-      <div class="footer-links">
-        {%- for link in site.contact -%}
-          {%- if link.url != "" -%}
-          <a href="{{ link.url }}" aria-label="{{ link.title }}" title="{{ link.title }}">{% include icon.html name=link.icon %}</a>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
-    </div>
-    <div class="container footer-small">
-      © {{ site.time | date: "%Y" }} Alejandro Hernandez Artiles · Last updated {{ site.time | date: "%B %Y" }}
     </div>
   </footer>
+
+  {% if site.palette_picker %}
+  <div class="palette-picker" role="group" aria-label="Choose a colour palette">
+    <span class="pp-name"></span>
+    <button type="button" data-p="klein" title="Klein" style="background: conic-gradient(#2a3fd1 0 50%, #ffb84d 0 75%, #b9a8ff 0)"></button>
+    <button type="button" data-p="aurora" title="Aurora" style="background: conic-gradient(#5b3fd1 0 50%, #2ad4c4 0 75%, #ff7eb6 0)"></button>
+    <button type="button" data-p="biblioteca" title="Biblioteca" style="background: conic-gradient(#1f5a43 0 50%, #d4a63a 0 75%, #8e2f3a 0)"></button>
+    <button type="button" data-p="atlantico" title="Atlántico" style="background: conic-gradient(#0b5a78 0 50%, #e2774f 0 75%, #8fb596 0)"></button>
+  </div>
+  <script>
+    (function () {
+      var root = document.documentElement, picker = document.querySelector('.palette-picker');
+      var label = picker.querySelector('.pp-name');
+      function sync() {
+        picker.querySelectorAll('button').forEach(function (b) {
+          var on = b.dataset.p === root.dataset.palette;
+          b.setAttribute('aria-pressed', on);
+          if (on) label.textContent = b.title;
+        });
+      }
+      picker.addEventListener('click', function (e) {
+        var b = e.target.closest('button'); if (!b) return;
+        root.dataset.palette = b.dataset.p;
+        try { localStorage.setItem('palette', b.dataset.p); } catch (err) {}
+        sync();
+      });
+      sync();
+    })();
+  </script>
+  {% endif %}
 
   <script>
     document.querySelector('.theme-toggle').addEventListener('click', function () {
