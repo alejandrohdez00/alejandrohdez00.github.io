@@ -45,11 +45,6 @@ contact:
 
 cv_pdf: /assets/documents/Alejandro_Hernandez_CV.pdf
 
-# Colour palette: rizoma | klein | aurora | biblioteca | atlantico (see _sass/_palettes.scss)
-palette: rizoma
-# Shows a floating palette switcher. For previewing only: set to false before publishing.
-palette_picker: true
-
 # Name highlighted in publication author lists
 me: "A. H. Artiles"
 

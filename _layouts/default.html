@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-palette="{{ site.palette | default: 'klein' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
-    /* Light is the default; dark only if the visitor chose it. Runs before paint. */
-    try {
-      var r = document.documentElement;
-      if (localStorage.getItem('theme') === 'dark') r.dataset.theme = 'dark';
-      {% if site.palette_picker %}var p = localStorage.getItem('palette'); if (p) r.dataset.palette = p;{% endif %}
-    } catch (e) {}
+    /* Dark is the default; light only if the visitor chose it. Runs before paint. */
+    try { if (localStorage.getItem('theme') === 'light') delete document.documentElement.dataset.theme; } catch (e) {}
   </script>
   {% seo %}
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
@@ -77,37 +73,6 @@
       </div>
     </div>
   </footer>
-
-  {% if site.palette_picker %}
-  <div class="palette-picker" role="group" aria-label="Choose a colour palette">
-    <span class="pp-name"></span>
-    <button type="button" data-p="rizoma" title="Rizoma" style="background: conic-gradient(#3b3fc4, #0b6e6e, #3fd1c0, #ff9a5c, #a3257a, #6a2fb8, #3b3fc4)"></button>
-    <button type="button" data-p="klein" title="Klein" style="background: conic-gradient(#2a3fd1 0 50%, #ffb84d 0 75%, #b9a8ff 0)"></button>
-    <button type="button" data-p="aurora" title="Aurora" style="background: conic-gradient(#5b3fd1 0 50%, #2ad4c4 0 75%, #ff7eb6 0)"></button>
-    <button type="button" data-p="biblioteca" title="Biblioteca" style="background: conic-gradient(#1f5a43 0 50%, #d4a63a 0 75%, #8e2f3a 0)"></button>
-    <button type="button" data-p="atlantico" title="Atlántico" style="background: conic-gradient(#0b5a78 0 50%, #e2774f 0 75%, #8fb596 0)"></button>
-  </div>
-  <script>
-    (function () {
-      var root = document.documentElement, picker = document.querySelector('.palette-picker');
-      var label = picker.querySelector('.pp-name');
-      function sync() {
-        picker.querySelectorAll('button').forEach(function (b) {
-          var on = b.dataset.p === root.dataset.palette;
-          b.setAttribute('aria-pressed', on);
-          if (on) label.textContent = b.title;
-        });
-      }
-      picker.addEventListener('click', function (e) {
-        var b = e.target.closest('button'); if (!b) return;
-        root.dataset.palette = b.dataset.p;
-        try { localStorage.setItem('palette', b.dataset.p); } catch (err) {}
-        sync();
-      });
-      sync();
-    })();
-  </script>
-  {% endif %}
 
   {%- if living %}
   <script src="{{ '/assets/js/network.js' | relative_url }}" defer></script>

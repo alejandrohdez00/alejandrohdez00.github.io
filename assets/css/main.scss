@@ -2,8 +2,7 @@
 ---
 /* ==========================================================================
    Alejandro Hernandez Artiles: site styles
-   Colours live in _sass/_palettes.scss. Light by default, dark via
-   [data-theme="dark"], palette via [data-palette="..."].
+   Colours live in _sass/_colors.scss. Dark by default, light via the toggle.
    ========================================================================== */
 
 @font-face { font-family: "Inter"; font-style: normal; font-weight: 400; font-display: swap;
@@ -23,7 +22,7 @@
 @font-face { font-family: "Newsreader"; font-style: italic; font-weight: 500; font-display: swap;
   src: url("../fonts/newsreader-500-italic.woff2") format("woff2"); }
 
-@import "palettes";
+@import "colors";
 
 :root {
   --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
@@ -393,9 +392,6 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   transform: translateY(-2px);
   box-shadow: var(--shadow);
 }
-.contact-cv { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.contact-cv .icon { color: var(--on-accent); }
-.contact-cv:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); }
 
 /* ---------- Sections ---------- */
 .section { margin-top: 4.5rem; counter-increment: section; }
@@ -844,35 +840,6 @@ figcaption {
 }
 .footer-links a:hover { color: var(--accent); background: var(--surface); transform: translateY(-2px); }
 
-/* ---------- Palette picker (preview only, see _config.yml) ---------- */
-.palette-picker {
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .5rem .7rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  box-shadow: var(--shadow);
-  font-size: .8rem;
-  color: var(--muted);
-}
-.palette-picker button {
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 50%;
-  border: 2px solid var(--surface);
-  box-shadow: 0 0 0 1px var(--line);
-  cursor: pointer;
-  padding: 0;
-}
-.palette-picker button[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--ink); }
-.palette-picker .pp-name { min-width: 5.5rem; font-weight: 600; color: var(--ink); }
-
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
   body { font-size: 1rem; }
@@ -891,7 +858,6 @@ figcaption {
   .prose-long { font-size: 1.1rem; }
   figure.medium img, figure.narrow img { max-width: 100%; }
   .cv-embed { display: none; }
-  .palette-picker .pp-name { display: none; }
   .network { -webkit-mask-image: none; mask-image: none; opacity: .3; }
 }
 
@@ -900,7 +866,7 @@ figcaption {
 }
 
 @media print {
-  .site-header, .site-footer, .theme-toggle, .contact, .glow, .network, .palette-picker { display: none; }
+  .site-header, .site-footer, .theme-toggle, .contact, .glow, .network { display: none; }
   body { background: #fff; color: #000; }
   body::after { display: none; }
 }

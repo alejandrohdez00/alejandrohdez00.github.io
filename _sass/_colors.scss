@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Colours. Dark is the default (set on <html> in _layouts/default.html);
+   light is opt-in via the sun/moon toggle.
+
+   Four fixed accent colours, picked to sit well next to the multicolour
+   background network (assets/js/network.js):
+     indigo  --accent       links, buttons, active nav
+     teal    --c2           dates, small labels
+     pink    --c3           venue pills
+     amber   --badge        "Oral / Award" badges, highlighter marks
+   ========================================================================== */
+
+/* Light (opt-in) */
+:root {
+  --bg: #f7f7f4;  --bg-2: #efeee9;  --surface: #fffffd;
+  --ink: #16161d; --ink-soft: #34343f; --muted: #60606c; --line: #e1e0da;
+
+  --accent: #3b3fc4; --accent-hover: #2c2f99; --accent-tint: #e8e8f8; --on-accent: #ffffff;
+  --c2: #0b6e6e;
+  --c3: #a3257a; --c3-tint: #f8e3ef;
+  --badge: #a3470f; --badge-tint: #f9e6d6;
+  --marker: #fbe2c4;
+
+  --glow-1: #6c7bff; --glow-2: #3fd1c0; --glow-3: #ff7eb6;
+  --duo: #e2e3fa;
+}
+
+/* Dark (default) */
+:root[data-theme="dark"] {
+  --bg: #0c0c12;  --bg-2: #111118;  --surface: #15151e;
+  --ink: #ededf3; --ink-soft: #cbcbd6; --muted: #9696a6; --line: #262630;
+
+  --accent: #9aa2ff; --accent-hover: #bcc1ff; --accent-tint: #1c1d3a; --on-accent: #0c0c12;
+  --c2: #5fd6cf;
+  --c3: #ff8fcf; --c3-tint: #33182b;
+  --badge: #ffb070; --badge-tint: #36260f;
+  --marker: #4a3417;
+
+  --glow-1: #3b3fc4; --glow-2: #0f8a83; --glow-3: #a3257a;
+  --duo: #d4d6ff;
+}

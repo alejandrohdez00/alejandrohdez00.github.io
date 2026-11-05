@@ -3,9 +3,7 @@
  * Seeds sprout branching trees; new nodes sometimes reach out and connect to
  * nearby nodes (also on other trees). Trees grow, rest, fade and re-sprout,
  * so the whole thing loops like a GIF. Colours flow through the spectrum
- * (Rizoma palette) or through the active palette's glow colours.
- * With the Rizoma palette it also makes the UI accent colours drift slowly
- * through a set of text-safe (WCAG AA) colours.
+ * along each branch and over time. The rest of the site's colours are static.
  */
 (function () {
   var canvas = document.querySelector('.network');
@@ -16,78 +14,14 @@
 
   var W = 0, H = 0, DPR = 1;
   var trees = [], nodes = [], edges = [];
-  var clock = 0, last = 0, spawnTimer = 0, tokenTimer = 0;
-  var isDark = false, isRizoma = false, stops = [];
+  var clock = 0, last = 0, spawnTimer = 0;
+  var isDark = true;
 
-  /* ---------- colour helpers ---------- */
-  function hexToRgb(s) {
-    s = (s || '').trim();
-    var m = /^#([0-9a-f]{6})$/i.exec(s);
-    if (!m) return [120, 130, 220];
-    var n = parseInt(m[1], 16);
-    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
-  }
-  function mix(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
-  function hex(c) {
-    return '#' + c.map(function (v) { var h = Math.round(Math.max(0, Math.min(255, v))).toString(16); return h.length < 2 ? '0' + h : h; }).join('');
-  }
-  function cyc(list, u) {
-    var n = list.length; u = ((u % n) + n) % n;
-    var i = Math.floor(u), f = u - i;
-    f = f * f * (3 - 2 * f); // smoothstep: linger on each colour
-    return mix(list[i], list[(i + 1) % n], f);
-  }
-
-  /* ---------- fluid UI tokens (Rizoma only) ---------- */
-  var LIGHT = ['#3b3fc4', '#0b6e6e', '#a3257a', '#a3470f', '#6a2fb8'].map(hexToRgb);
-  var DARK = ['#9aa2ff', '#5fd6cf', '#ff8fcf', '#ffb070', '#c3a2ff'].map(hexToRgb);
-  var BG_L = hexToRgb('#f7f7f4'), BG_D = hexToRgb('#0c0c12');
-  var WHITE = [255, 255, 255], INK = hexToRgb('#16161d');
-  var VARS = ['--accent', '--accent-hover', '--accent-tint', '--c2', '--marker', '--duo', '--glow-1', '--glow-2', '--glow-3'];
-  var tokensApplied = false;
-
-  function fluidTokens() {
-    if (!isRizoma) {
-      if (tokensApplied) { VARS.forEach(function (v) { root.style.removeProperty(v); }); tokensApplied = false; }
-      return;
-    }
-    var list = isDark ? DARK : LIGHT, bg = isDark ? BG_D : BG_L;
-    var u = clock / 18; // ~18 s per colour, 90 s full cycle
-    var acc = cyc(list, u), c2 = cyc(list, u + 2);
-    var set = function (k, v) { root.style.setProperty(k, v); };
-    set('--accent', hex(acc));
-    set('--accent-hover', hex(mix(acc, isDark ? WHITE : INK, 0.25)));
-    set('--accent-tint', hex(mix(acc, bg, isDark ? 0.8 : 0.89)));
-    set('--c2', hex(c2));
-    set('--marker', hex(mix(c2, bg, isDark ? 0.72 : 0.8)));
-    set('--duo', hex(mix(acc, WHITE, isDark ? 0.6 : 0.8)));
-    // Large soft glows drift slowly (one full turn of the wheel every 90 s), starting at indigo.
-    var h = 235 + clock * 4;
-    for (var k = 0; k < 3; k++) {
-      set('--glow-' + (k + 1), 'hsl(' + Math.round((h + k * 120) % 360) + ', 70%, ' + (isDark ? 50 : 70) + '%)');
-    }
-    tokensApplied = true;
-  }
-
-  function readTheme() {
-    isDark = root.dataset.theme === 'dark';
-    isRizoma = root.dataset.palette === 'rizoma';
-    if (!isRizoma) {
-      VARS.forEach(function (v) { root.style.removeProperty(v); });
-      tokensApplied = false;
-      var cs = getComputedStyle(root);
-      stops = ['--glow-1', '--glow-2', '--glow-3'].map(function (v) { return hexToRgb(cs.getPropertyValue(v)); });
-    }
-    fluidTokens();
-  }
+  function readTheme() { isDark = root.dataset.theme === 'dark'; }
 
   function colorFor(tree, depth, alpha) {
-    if (isRizoma) {
-      var h = (tree.hue + depth * 24 + clock * 10) % 360;
-      return 'hsla(' + Math.round(h) + ',' + (isDark ? '80%,66%,' : '72%,50%,') + alpha.toFixed(3) + ')';
-    }
-    var c = cyc(stops, (tree.offset + depth * 0.11 + clock * 0.015) * 3);
-    return 'rgba(' + (c[0] | 0) + ',' + (c[1] | 0) + ',' + (c[2] | 0) + ',' + alpha.toFixed(3) + ')';
+    var h = (tree.hue + depth * 24 + clock * 10) % 360;
+    return 'hsla(' + Math.round(h) + ',' + (isDark ? '80%,66%,' : '72%,50%,') + alpha.toFixed(3) + ')';
   }
 
   /* ---------- growth model ---------- */
@@ -250,8 +184,6 @@
     last = ts; dt = Math.min(dt, 0.1); // no jumps after a hidden tab
     clock += dt;
     update(dt);
-    tokenTimer -= dt;
-    if (tokenTimer <= 0) { fluidTokens(); tokenTimer = 0.25; }
     draw();
   }
 
@@ -259,7 +191,7 @@
   resize();
   readTheme();
   new MutationObserver(function () { readTheme(); if (reduce) draw(); })
-    .observe(root, { attributes: true, attributeFilter: ['data-theme', 'data-palette'] });
+    .observe(root, { attributes: true, attributeFilter: ['data-theme'] });
 
   if (reduce) {
     // A single, still, fully grown network.
