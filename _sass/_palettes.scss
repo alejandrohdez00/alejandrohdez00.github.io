@@ -110,3 +110,28 @@
   --glow-1: #0b5a78; --glow-2: #a5452c; --glow-3: #4d6b52;
   --duo: #cde7f0;
 }
+
+/* ---- Rizoma: a living spectrum. Static values = first colour of the cycle;
+        assets/js/network.js makes the accents drift through text-safe colours. ---- */
+:root[data-palette="rizoma"] {
+  --bg: #f7f7f4;  --bg-2: #efeee9;  --surface: #fffffd;
+  --ink: #16161d; --ink-soft: #34343f; --muted: #60606c; --line: #e1e0da;
+  --accent: #3b3fc4; --accent-hover: #2c2f99; --accent-tint: #e8e8f8; --on-accent: #ffffff;
+  --c2: #a3257a;
+  --c3: #0b6a6a; --c3-tint: #ddefed;
+  --badge: #b8392a; --badge-tint: #fbe4dd;
+  --marker: #f1d6e7;
+  --glow-1: #6c7bff; --glow-2: #ff9a5c; --glow-3: #3fd1c0;
+  --duo: #e2e3fa;
+}
+:root[data-palette="rizoma"][data-theme="dark"] {
+  --bg: #0c0c12;  --bg-2: #111118;  --surface: #16161f;
+  --ink: #ededf3; --ink-soft: #cbcbd6; --muted: #9696a6; --line: #26262f;
+  --accent: #9aa2ff; --accent-hover: #bcc1ff; --accent-tint: #1d1e3a; --on-accent: #0c0c12;
+  --c2: #ff8fcf;
+  --c3: #5fd6cf; --c3-tint: #12302e;
+  --badge: #ff9a85; --badge-tint: #3a1f1c;
+  --marker: #4a2440;
+  --glow-1: #3b3fc4; --glow-2: #b05a20; --glow-3: #0f8a83;
+  --duo: #d4d6ff;
+}

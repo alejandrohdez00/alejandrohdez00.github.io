@@ -23,10 +23,15 @@
   <script defer src="{{ '/assets/katex/contrib/auto-render.min.js' | relative_url }}" onload="renderMathInElement(document.body)"></script>
   {% endif %}
 </head>
-<body>
+{%- assign living = true -%}
+{%- if page.layout == "post" -%}{%- assign living = false -%}{%- endif -%}
+<body{% if living %} class="has-network"{% endif %}>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  {%- if living %}
+  <canvas class="network" aria-hidden="true"></canvas>
   <div class="glow" aria-hidden="true"><span></span><span></span><span></span></div>
+  {%- endif %}
 
   <header class="site-header">
     <div class="container header-inner">
@@ -76,6 +81,7 @@
   {% if site.palette_picker %}
   <div class="palette-picker" role="group" aria-label="Choose a colour palette">
     <span class="pp-name"></span>
+    <button type="button" data-p="rizoma" title="Rizoma" style="background: conic-gradient(#3b3fc4, #0b6e6e, #3fd1c0, #ff9a5c, #a3257a, #6a2fb8, #3b3fc4)"></button>
     <button type="button" data-p="klein" title="Klein" style="background: conic-gradient(#2a3fd1 0 50%, #ffb84d 0 75%, #b9a8ff 0)"></button>
     <button type="button" data-p="aurora" title="Aurora" style="background: conic-gradient(#5b3fd1 0 50%, #2ad4c4 0 75%, #ff7eb6 0)"></button>
     <button type="button" data-p="biblioteca" title="Biblioteca" style="background: conic-gradient(#1f5a43 0 50%, #d4a63a 0 75%, #8e2f3a 0)"></button>
@@ -102,6 +108,10 @@
     })();
   </script>
   {% endif %}
+
+  {%- if living %}
+  <script src="{{ '/assets/js/network.js' | relative_url }}" defer></script>
+  {%- endif %}
 
   <script>
     document.querySelector('.theme-toggle').addEventListener('click', function () {
