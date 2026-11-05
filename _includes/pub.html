@@ -1,0 +1,27 @@
+{%- assign pub = include.pub -%}
+{%- capture me_html -%}<span class="me">{{ site.me }}</span>{%- endcapture -%}
+<li class="pub">
+  <div class="pub-head">
+    <span class="pill pill-venue">{{ pub.venue_short }}</span>
+    {%- if pub.highlight %}<span class="pill pill-highlight">{{ pub.highlight }}</span>{% endif -%}
+  </div>
+  <h3 class="pub-title">{% if pub.url %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
+  <p class="pub-authors">{{ pub.authors | replace: site.me, me_html }}</p>
+  <p class="pub-venue">{{ pub.venue }}{% if pub.note %} <span class="pub-note">· {{ pub.note }}</span>{% endif %}</p>
+  {%- if include.summary and pub.summary %}
+  <p class="pub-summary">{{ pub.summary }}</p>
+  {%- endif %}
+  {%- if pub.links %}
+  <p class="pub-links">
+    {%- for link in pub.links -%}
+      {%- case link[0] -%}
+        {%- when "arxiv" -%}{%- assign label = "arXiv" -%}
+        {%- when "pdf" -%}{%- assign label = "PDF" -%}
+        {%- when "doi" -%}{%- assign label = "DOI" -%}
+        {%- else -%}{%- assign label = link[0] | capitalize -%}
+      {%- endcase -%}
+      <a class="chip" href="{{ link[1] }}">{{ label }}</a>
+    {%- endfor -%}
+  </p>
+  {%- endif %}
+</li>

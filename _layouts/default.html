@@ -1,44 +1,79 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-<title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
-<meta charset="{{ site.encoding }}">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="{{ page.author | default: site.author | escape }}">
-<meta name="generator" content="Jekyll v{{ jekyll.version }}">
-<link rel="canonical" href="{{ page.url | absolute_url }}">
-{% if site.show_frame %}
-<link rel="stylesheet" href="{{ "/assets/css/frame.css" | relative_url }}">
-{% else %}
-<link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
-{% endif %}
-{% if site.plugins contains "jekyll-feed" %}<link rel="alternate" href="{{ site.feed.path | default: "/feed.xml" | relative_url }}" type="application/atom+xml" title="{{ site.title }}">{% endif %}
-{% if page.mathjax or site.mathjax %}
-<link rel="stylesheet" href="{{ "/assets/katex/katex.min.css" | relative_url }}">
-<script defer src="{{ "/assets/katex/katex.min.js" | relative_url }}"></script>
-<script defer src="{{ "/assets/katex/contrib/auto-render.min.js" | relative_url }}" onload="renderMathInElement(document.body)"></script>
-{% endif %}
-{% if site.comments.disqus_shortname and page.layout == "post" %}<script src="//{{ site.comments.disqus_shortname }}.disqus.com/embed.js" async></script>{% endif %}
-{% if site.comments.isso_domain and page.layout == "post" %}<script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/js/embed.min.js"></script>{% endif %}
-{% if site.show_sidebar or site.sidebar %}{% include sidebar.html %}{% endif %}
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    /* Light is the default; dark only if the visitor chose it. Runs before paint. */
+    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+  </script>
+  {% seo %}
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preload" href="{{ '/assets/fonts/newsreader-500-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/inter-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% feed_meta %}
+  {% if page.mathjax %}
+  <link rel="stylesheet" href="{{ '/assets/katex/katex.min.css' | relative_url }}">
+  <script defer src="{{ '/assets/katex/katex.min.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/katex/contrib/auto-render.min.js' | relative_url }}" onload="renderMathInElement(document.body)"></script>
+  {% endif %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-{% if site.navigation %}
-  {% assign pages = site.navigation %}
-{% else %}
-  {% assign pages = site.pages | where_exp: "item", "item.title and item.sitemap != false" | sort: "order" %}
-{% endif %}
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="{{ '/' | relative_url }}">Alejandro H. Artiles</a>
+      <nav class="site-nav" aria-label="Main">
+        {%- for item in site.navigation -%}
+          {%- assign is_current = false -%}
+          {%- if page.url == item.url -%}{%- assign is_current = true -%}
+          {%- elsif item.url == "/blog/" and page.layout == "post" -%}{%- assign is_current = true -%}
+          {%- endif -%}
+          <a href="{{ item.url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- endfor -%}
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="when-light">{% include icon.html name="moon" %}</span>
+          <span class="when-dark">{% include icon.html name="sun" %}</span>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
-  {% include menu.html menu=pages %}
-</header>
+  <main id="main" class="container">
+    {{ content }}
+  </main>
 
-{{ content }}
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Alejandro Hernandez Artiles</div>
+        <div class="footer-meta">
+          {% include icon.html name="pin" %} Berlin, Germany ·
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        {%- for link in site.contact -%}
+          {%- if link.url != "" -%}
+          <a href="{{ link.url }}" aria-label="{{ link.title }}" title="{{ link.title }}">{% include icon.html name=link.icon %}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="container footer-small">
+      © {{ site.time | date: "%Y" }} Alejandro Hernandez Artiles · Last updated {{ site.time | date: "%B %Y" }}
+    </div>
+  </footer>
 
-{% if site.external %}
-<footer>
-  <div>{{ site.description | default: site.title }}</div>
-  {% include menu.html menu=site.external %}
-</footer>
-{% endif %}
-
+  <script>
+    document.querySelector('.theme-toggle').addEventListener('click', function () {
+      var root = document.documentElement;
+      var dark = root.dataset.theme !== 'dark';
+      if (dark) root.dataset.theme = 'dark'; else delete root.dataset.theme;
+      try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+    });
+  </script>
+</body>
 </html>

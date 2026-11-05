@@ -1,16 +1,72 @@
 ---
-layout: page
-title: "About"
+layout: default
+title: "Alejandro Hernandez Artiles"
 ---
+{%- assign news_limit = 6 -%}
 
-<p>I’m <strong>Alejandro Hernandez Artiles</strong>, an ELLIS PhD student at the Max Planck Institute for Human Development and the Max Planck Institute for Intelligent Systems, co-supervised by Iyad Rahwan and Bernhard Schölkopf.</p>
+<section class="hero">
+  <img class="hero-photo" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Portrait of Alejandro Hernandez Artiles" width="480" height="480">
+  <div class="hero-text">
+    <h1 class="hero-name">Alejandro Hernandez Artiles</h1>
+    <p class="hero-role">
+      <a href="https://ellis.eu">ELLIS</a> PhD Student<br>
+      <a href="https://www.mpib-berlin.mpg.de/en">MPI for Human Development</a> ·
+      <a href="https://is.mpg.de">MPI for Intelligent Systems</a>
+    </p>
+    <p class="hero-advisors">
+      Advised by <a href="https://www.mpib-berlin.mpg.de/staff/iyad-rahwan">Iyad Rahwan</a>
+      &amp; <a href="https://is.mpg.de/person/bs">Bernhard Schölkopf</a>
+    </p>
+    <p class="hero-tagline">Open-ended AI for cultural and scientific discovery.</p>
+  </div>
+</section>
 
-<p>I believe science and art are evolutionary processes, where ideas are mutated, shared and selected over time by a population of agents. Therefore, my research explores <strong>open-ended AI for cultural and scientific discovery</strong>. Mainly inspired by what we call cultural evolution, I develop methods that help AI systems continually explore original, coherent ideas in domains without clear reward signals, like early-stage scientific ideation.</p>
+{% include contact.html %}
 
-<p>Outside research, I enjoy creative writing, literature, cinema, video games, and opera.</p>
+<section class="section about">
+  <h2 class="section-title">About</h2>
+  <p>Hi! I’m <strong>Alejandro</strong>, an ELLIS PhD student at the Max Planck Institute for Human Development and the Max Planck Institute for Intelligent Systems, co-supervised by Iyad Rahwan and Bernhard Schölkopf.</p>
 
-<p><a href="https://scholar.google.com/citations?user=-5D4y-kAAAAJ&amp;hl=es">Google Scholar</a></p>
+  <p>I believe science and art are evolutionary processes, where ideas are mutated, shared and selected over time by a population of agents. My research therefore explores <strong>open-ended AI for cultural and scientific discovery</strong>. Inspired by cultural evolution, I develop methods that help AI systems continually explore original, coherent ideas in domains without clear reward signals, such as early-stage scientific ideation.</p>
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="{{ '/assets/images/about.jpg' | relative_url }}" alt="Alejandro Hernandez Artiles" style="max-width: 100%; height: auto;">
-</div>
+  <p>Outside research, I enjoy creative writing, literature, cinema, video games and opera.</p>
+
+  <p class="callout">I’m always happy to chat about open-endedness, creativity, or a good Borges story. Feel free to <a href="mailto:{{ site.email }}">send me an email</a>!</p>
+</section>
+
+<section class="section">
+  <h2 class="section-title">News</h2>
+  {% include news.html limit=news_limit offset=0 %}
+  {%- if site.data.news.size > news_limit %}
+  <details class="older-news">
+    <summary>Older news</summary>
+    {% include news.html limit=100 offset=news_limit %}
+  </details>
+  {%- endif %}
+</section>
+
+<section class="section">
+  <h2 class="section-title">Selected publications</h2>
+  <ul class="pubs">
+    {%- assign selected = site.data.publications | where: "selected", true -%}
+    {%- for pub in selected -%}
+      {% include pub.html pub=pub summary=true %}
+    {%- endfor -%}
+  </ul>
+  <a class="more-link" href="{{ '/publications/' | relative_url }}">All publications {% include icon.html name="arrow" %}</a>
+</section>
+
+{%- if site.posts.size > 0 %}
+<section class="section">
+  <h2 class="section-title">Recent writing</h2>
+  <ul class="post-list">
+    {%- for post in site.posts limit: 2 -%}
+    <li>
+      <a class="post-list-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %Y" }}</time>
+    </li>
+    {%- endfor -%}
+  </ul>
+  <a class="more-link" href="{{ '/blog/' | relative_url }}">All writing {% include icon.html name="arrow" %}</a>
+</section>
+{%- endif %}

@@ -1,0 +1,8 @@
+<ul class="contact">
+  {%- for link in site.contact -%}
+    {%- if link.url != "" -%}
+    <li><a class="contact-link" href="{{ link.url }}">{% include icon.html name=link.icon %}<span>{{ link.title }}</span></a></li>
+    {%- endif -%}
+  {%- endfor -%}
+  <li><a class="contact-link contact-cv" href="{{ site.cv_pdf | relative_url }}">{% include icon.html name="file" %}<span>CV (PDF)</span></a></li>
+</ul>

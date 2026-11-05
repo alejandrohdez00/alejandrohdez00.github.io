@@ -1,14 +1,22 @@
 ---
 layout: default
 ---
-
-<article>
-  {% include meta.html post=page %}
-  {{ content }}
-  {% if page.comments != false and site.comments.isso or site.comments.disqus %}
-    <hr>
-    {% if site.comments.isso_domain %}<div id="isso-thread"></div>{% endif %}
-    {% if site.comments.disqus_shortname %}<div id="disqus_thread"></div>{% endif %}
-    <noscript>Please enable JavaScript to view comments.</noscript>
-  {% endif %}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 220 | plus: 1 -%}
+<article class="post">
+  <header class="page-header">
+    <a class="back-link" href="{{ '/blog/' | relative_url }}">← Writing</a>
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
+      · {{ minutes }} min read
+    </p>
+  </header>
+  <div class="prose prose-long">
+    {{ content }}
+  </div>
+  <footer class="post-footer">
+    <p>Thoughts, disagreements or a good book recommendation? I'd love to hear from you, <a href="mailto:{{ site.email }}">write me an email</a>.</p>
+    <a class="back-link" href="{{ '/blog/' | relative_url }}">← All writing</a>
+  </footer>
 </article>

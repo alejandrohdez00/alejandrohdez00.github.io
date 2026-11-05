@@ -1,0 +1,30 @@
+# News, newest first. `text` supports inline Markdown (links, *italics*, **bold**).
+# The first 6 items show on the homepage; older ones go under "Older news".
+# NOTE: dates marked "check" are approximate. Please correct them.
+
+- date: 2026-09-25   # check
+  text: "*The Alien Space of Science* was accepted to the **NeurIPS 2026 Main Track**! 🎉 [Paper](https://arxiv.org/abs/2603.01092)"
+
+- date: 2026-09-18   # check
+  text: "New preprint: *[Time Machine Experiments](https://arxiv.org/abs/2609.15468)*, where we use historically-bounded language models to study perceptions of moral decline."
+
+- date: 2026-07-15   # check
+  text: "Presenting *[Lacuna: A Research Map for Machine Learning](https://arxiv.org/abs/2606.26246)* at the AI4Science Workshop at **ICML 2026**."
+
+- date: 2026-03-01
+  text: "Started a research internship at **Tiptree Systems** on AI for scientific discovery."
+
+- date: 2025-12-05   # check
+  text: "Presenting the *[Cultural Alien Sampler](https://proceedings.neurips.cc/paper_files/paper/2025/hash/ce57a4b9274d44d7692e715ed1876ded-Abstract-Creative_AI_Track.html)* at the **NeurIPS 2025 Creative AI Track** in San Diego."
+
+- date: 2025-11-15   # check
+  text: "Our paper on VLMs for driver gaze estimation was published in *[Computer Vision and Image Understanding](https://doi.org/10.1016/j.cviu.2025.104593)*."
+
+- date: 2024-10-01
+  text: "Joined **Vicomtech** in San Sebastián as a research assistant working on vision-language agents."
+
+- date: 2024-07-15   # check
+  text: "Defended my Master's thesis, *Alien Recombination*, at TUM (10/10). I wrote about it [here](/creativity-recombination/)."
+
+- date: 2024-02-01
+  text: "Joined the **Max Planck Institute for Human Development** in Berlin as a visiting researcher in Iyad Rahwan's Center for Humans and Machines."

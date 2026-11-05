@@ -1,0 +1,18 @@
+---
+layout: page
+title: "Publications"
+permalink: /publications/
+subtitle: "Papers and preprints. See also my <a href=\"https://scholar.google.com/citations?user=-5D4y-kAAAAJ\">Google Scholar</a> profile."
+---
+
+{%- assign by_year = site.data.publications | group_by: "year" | sort: "name" | reverse -%}
+{%- for group in by_year %}
+<h2 class="year-heading">{{ group.name }}</h2>
+<ul class="pubs">
+  {%- for pub in group.items -%}
+    {% include pub.html pub=pub summary=true %}
+  {%- endfor -%}
+</ul>
+{%- endfor %}
+
+<p class="small-note"><span class="me">A. H. Artiles</span> is me · * equal contribution</p>

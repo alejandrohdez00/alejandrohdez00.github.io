@@ -5,9 +5,9 @@ mathjax: true
 ---
 
 
-<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg/1920px-Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg" alt="aquelarre" style="max-width: 100%; height: auto;">
-</div>
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg/1920px-Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg" alt="aquelarre" loading="lazy">
+</figure>
 
 *"Art is a mechanism constantly trying to destroy itself, always questioning what is or isn’t art."*
 
@@ -39,9 +39,9 @@ Transformational creativity, that involves fundamentally changing how we think a
 
 ## Don't underestimate the power of Combinatorial Creativity
 
-<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="/assets/images/darth-vader.png" alt="darth-vader" style="max-width: 80%; height: auto;">
-</div>
+<figure class="medium">
+  <img src="/assets/images/darth-vader.png" alt="darth-vader" loading="lazy">
+</figure>
 
 Combinatorial creativity is often considered the most basic form of creativity. While some studies suggest that LLMs are primarily limited to this type of creativity, lacking the deeper exploratory or transformative capabilities found in other forms [8], we shouldn't undervalue the power of combining different concepts.
 
@@ -67,17 +67,17 @@ Of course, we're making some assumptions here, like limiting our concept world t
 
 If you're interested, you can read the paper [here](https://arxiv.org/abs/2411.11494) However, this post aims to address a broader perspective beyond just discussing the paper. The key point is that while combinatorial creativity is often considered the least interesting and is frequently dismissed as the simplest form, it still holds immense power and unexplored potential especially with AI systems now capable of finding and exploiting what we have overlooked. Our paper is merely a small step, a toy idea, compared to the progress that still lies ahead.
 
-<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="/assets/images/insect2.png" alt="insect-image" style="max-width: 100%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;">Figure 3: A dragon insect with a skirt or an insect army commanded by an imperial official, combinations absent in our training dataset, but also cognitively unavailable to all artists on the domain.</p>
-</div>
+<figure>
+  <img src="/assets/images/insect2.png" alt="insect-image" loading="lazy">
+  <figcaption>Figure 3: A dragon insect with a skirt or an insect army commanded by an imperial official, combinations absent in our training dataset, but also cognitively unavailable to all artists on the domain.</figcaption>
+</figure>
 
 ## Creativity is Divergent
 
-<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="https://nfgaleria.com/wp-content/uploads/2023/02/ultraleve_sala.jpg" alt="pipoart" style="max-width: 100%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;">Figure 4: Ultraleve, Pipo Hernandez</p>
-</div>
+<figure>
+  <img src="https://nfgaleria.com/wp-content/uploads/2023/02/ultraleve_sala.jpg" alt="pipoart" loading="lazy">
+  <figcaption>Figure 4: Ultraleve, Pipo Hernandez</figcaption>
+</figure>
 
 Now, let's dive into the tricky part: how creativity may work in practice, what is its essence.
 
@@ -109,10 +109,10 @@ I find particularly interesting Varshney work on defining creativity in a mathem
 
 Now, let me introduce a curious concept [10] from Jürgen Schmidhuber that might sound crazy at first, but ended up feeling incredibly intuitive to me: creativity is fundamentally about finding data compressions.
 
-<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvcG9sbG9ja19jb252ZXJnZW5jZS5qcGciLCJyZXNpemVDcm9wLDYwMCwzMDAsQ1JPUF9CQUxBTkNFIl19.zGBWtGDt4jOQczGQzG3ZwAqc7OWVBFO4lvfDopU6MO/0.jpg" alt="compression" style="max-width: 100%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;">Figure 5: Convergence, Jackson Pollock</p>
-</div>
+<figure>
+  <img src="https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvcG9sbG9ja19jb252ZXJnZW5jZS5qcGciLCJyZXNpemVDcm9wLDYwMCwzMDAsQ1JPUF9CQUxBTkNFIl19.zGBWtGDt4jOQczGQzG3ZwAqc7OWVBFO4lvfDopU6MO/0.jpg" alt="compression" loading="lazy">
+  <figcaption>Figure 5: Convergence, Jackson Pollock</figcaption>
+</figure>
 
 We live in an environment full of historical data: our entire record of actions, observations, experiences and reward signals. Simple explanations of the past often reflect some repetitive patterns, which are useful for predicting the future. Therefore, any intelligent system aiming to achieve future goals should be driven to compress its sensory history. To achieve this, we identify regularities and create compact internal representations or symbols for frequently recurring elements. Even when predictions aren't perfect, we can still compress data effectively by using shorter codes for events that occur with very high probability. For example, since the sun rises every day, it’s efficient to create a symbol like "daylight" to represent this recurring event, rather than continuously storing raw sensory data about each sunrise. 
 
@@ -151,11 +151,10 @@ Again, Borges' *Pierre Menard* captures this concept beautifully. Even an identi
 
 ## Thoughts on Art as Compression
 
-<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="https://d7hftxdivxxvm.cloudfront.net/?height=632&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FAVjxLlGSYPD9AAuno1tjmw%2Flarge.jpg&width=640
-  " alt="black-square" style="max-width: 100%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;">Figure 6: Black Square, Kazimir Malevich</p>
-</div>
+<figure>
+  <img src="https://d7hftxdivxxvm.cloudfront.net/?height=632&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FAVjxLlGSYPD9AAuno1tjmw%2Flarge.jpg&width=640" alt="black-square" loading="lazy">
+  <figcaption>Figure 6: Black Square, Kazimir Malevich</figcaption>
+</figure>
 
 
 As much as I enjoy computationally-focused philosophical theories, and as much as I admire the beauty (or perhaps the amount of compressed bits) of Schmidhuber's framework, I was born into a family of artists and have been surrounded by art creation my entire life. I exist in two worlds: my computer scientist side is fascinated by the idea of creativity being fully computational and replicable by machines, and I am passionate about advancing this research. Yet, another part of me wants to believe there is still something deeper to discover—that creativity cannot be reduced to something so straightforward.
@@ -184,15 +183,15 @@ As a computer scientist working on artificial creativity, such an elusive domain
 
 ## Are AI Models Already Creative?
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin: 20px 0;">
-  <div style="flex: 1; margin-right: 10px; display: flex; flex-direction: column; align-items: center;">
-    <img src="/assets/images/dadaism_1.png" alt="dadaism" style="width: 100%; height: 300px; object-fit: contain;">
-    <p style="text-align: center; margin-top: 10px;">Figure 7: Dadaism problem generated by Stable Diffusion</p>
-  </div>
-  <div style="flex: 1; margin-left: 10px; display: flex; flex-direction: column; align-items: center;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Marcel_Duchamp%2C_1917%2C_Fountain%2C_photograph_by_Alfred_Stieglitz.jpg" alt="fountain" style="width: 100%; height: 300px; object-fit: contain;">
-    <p style="text-align: center; margin-top: 10px;">Figure 8: The Fountain, Marcel Duchamp</p>
-  </div>
+<div class="figure-row">
+  <figure>
+    <img src="/assets/images/dadaism_1.png" alt="dadaism" loading="lazy">
+    <figcaption>Figure 7: Dadaism problem generated by Stable Diffusion</figcaption>
+  </figure>
+  <figure>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Marcel_Duchamp%2C_1917%2C_Fountain%2C_photograph_by_Alfred_Stieglitz.jpg" alt="fountain" loading="lazy">
+    <figcaption>Figure 8: The Fountain, Marcel Duchamp</figcaption>
+  </figure>
 </div>
 
 Artificial Neural Networks excel at automatically representing and compressing data, effectively separating different patterns within it. While Schmidhuber's theory suggests AI models might already be creative, there's a crucial distinction to make: though they can effectively compress historical data, they lack two fundamental aspects of creativity, the ability to search for "interestingness" and the capacity to create artifacts that compress previously unseen and undetected regularities. What they actually do is compress existing data well, providing some generalization in lower dimensions based on the data's inherent behavior. However, they cannot search for and output novel insights about their environment or knowledge base. They lack a transformative approach to creativity.
@@ -213,10 +212,10 @@ In short, if we define creativity as the ability to produce novel and valuable a
 
 Regarding the Art domain, some artists, like Ted Chiang (the author of the beautiful *Story of Your Life*, which inspired the movie *Arrival*), [argue that AI will never be an artist](https://www.newyorker.com/culture/the-weekend-essay/why-ai-isnt-going-to-make-art). Chiang claims that creating art involves making countless small, intentional decisions (every word chosen with purpose, every frame in a John Ford movie, every brushstroke in a painting). A system that generates probable outputs based on a brief prompt, he says, won't truly understand or grasp the nuances of artistic creation. While I agree with Chiang that art involves constantly taking fine, crucial decisions, I believe this doesn’t rule out the potential for future AI systems. From the perspective of creativity as compression, each decision is made to resonate with the audience, conveying more than just the combination of words or brushtrokes. I believe we can design AI systems capable of divergent thinking, producing creative artifacts, whether artistic or not.
 
-<div style="display: flex; flex-direction: column; align-items: center; margin: 20px 0;">
-  <img src="/assets/images/dat-score.png" alt="insect-image" style="max-width: 100%; height: auto;">
-  <p style="text-align: center; margin-top: 10px;">Figure 10: As DAT (measure of creativity) increases, the novelty and usefulness gains of using LLMs decreases</p>
-</div>
+<figure>
+  <img src="/assets/images/dat-score.png" alt="insect-image" loading="lazy">
+  <figcaption>Figure 10: As DAT (measure of creativity) increases, the novelty and usefulness gains of using LLMs decreases</figcaption>
+</figure>
 
 ## Open-endedness
 

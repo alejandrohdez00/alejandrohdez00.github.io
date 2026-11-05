@@ -1,0 +1,56 @@
+# Publications, newest first.
+#   selected: true      -> also shown on the homepage
+#   highlight: "Oral"   -> small coral badge (e.g. Oral, Spotlight, Award)
+#   links: any of arxiv, pdf, code, project, video, slides, poster, doi
+#   note: "* equal contribution"
+
+- title: "The Alien Space of Science: Sampling Coherent but Cognitively Unavailable Research Directions"
+  url: "https://arxiv.org/abs/2603.01092"
+  authors: "A. H. Artiles, M. Weiss, L. Brinkmann, I. Rahwan, B. Schölkopf, C. Pal, H. Larochelle, A. Goyal, N. Rahaman"
+  venue: "Advances in Neural Information Processing Systems (NeurIPS), Main Track"
+  venue_short: "NeurIPS 2026"
+  year: 2026
+  selected: true
+  summary: "Sampling scientifically coherent research directions that lie beyond the ideas existing research communities are most likely to produce."
+  links:
+    arxiv: "https://arxiv.org/abs/2603.01092"
+
+- title: "Time Machine Experiments: Using Historically-Bounded AI for Inquiry into the Human Mind"
+  url: "https://arxiv.org/abs/2609.15468"
+  authors: "H. Yakura*, R. Schimmelpfennig*, E. Lopez-Lopez*, A. H. Artiles, L. Brinkmann, J.-F. Bonnefon, A. Shariff, I. Rahwan"
+  venue: "arXiv preprint"
+  venue_short: "Preprint 2026"
+  year: 2026
+  selected: true
+  note: "* equal contribution"
+  links:
+    arxiv: "https://arxiv.org/abs/2609.15468"
+
+- title: "Lacuna: A Research Map for Machine Learning"
+  url: "https://arxiv.org/abs/2606.26246"
+  authors: "M. Weiss, M. Q. Li, A. H. Artiles, Y. Mkhinini, C. Pal, H. Larochelle, N. Rahaman"
+  venue: "AI4Science Workshop, International Conference on Machine Learning (ICML)"
+  venue_short: "ICML 2026 Workshop"
+  year: 2026
+  links:
+    arxiv: "https://arxiv.org/abs/2606.26246"
+
+- title: "Exploring Visual Language Models for Driver Gaze Estimation: A Task-Based Approach to Debugging AI"
+  url: "https://doi.org/10.1016/j.cviu.2025.104593"
+  authors: "P. N. Cañas, A. H. Artiles, M. Nieto, I. Rodríguez"
+  venue: "Computer Vision and Image Understanding, 263:104593"
+  venue_short: "CVIU 2026"
+  year: 2026
+  links:
+    doi: "https://doi.org/10.1016/j.cviu.2025.104593"
+
+- title: "Cultural Alien Sampler: Open-ended Art Generation Balancing Originality and Coherence"
+  url: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/ce57a4b9274d44d7692e715ed1876ded-Abstract-Creative_AI_Track.html"
+  authors: "A. H. Artiles, H. Yakura, L. Brinkmann, M. Canet Sola, H. Abu Alhaija, I. Serna, N. Rahaman, B. Schölkopf, I. Rahwan"
+  venue: "Advances in Neural Information Processing Systems (NeurIPS), Creative AI Track"
+  venue_short: "NeurIPS 2025"
+  year: 2025
+  selected: true
+  summary: "A concept-sampling method that balances originality and coherence in art generation, evaluated against GPT-4o and human art students."
+  links:
+    paper: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/ce57a4b9274d44d7692e715ed1876ded-Abstract-Creative_AI_Track.html"

@@ -1,0 +1,9 @@
+{%- comment -%} Usage: {% include news.html limit=6 offset=0 %} {%- endcomment -%}
+<ul class="news">
+  {%- for item in site.data.news limit: include.limit offset: include.offset -%}
+  <li>
+    <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %Y" }}</time>
+    <span>{{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
+  </li>
+  {%- endfor -%}
+</ul>
