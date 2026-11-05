@@ -18,6 +18,12 @@ social:
     - "https://github.com/alejandrohdez00"
     - "https://www.linkedin.com/in/alejandro-hernandez-artiles/"
     - "https://scholar.google.com/citations?user=-5D4y-kAAAAJ"
+    - "https://x.com/aleHArtiles"
+
+# Twitter/X card attribution
+twitter:
+  username: aleHArtiles
+  card: summary
 
 # Header navigation
 navigation:
@@ -33,6 +39,7 @@ contact:
   - {title: "Google Scholar", icon: "scholar", url: "https://scholar.google.com/citations?user=-5D4y-kAAAAJ"}
   - {title: "GitHub", icon: "github", url: "https://github.com/alejandrohdez00"}
   - {title: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/alejandro-hernandez-artiles/"}
+  - {title: "X", icon: "x", url: "https://x.com/aleHArtiles"}
   - {title: "ORCID", icon: "orcid", url: ""}
   - {title: "Bluesky", icon: "bluesky", url: ""}
 
